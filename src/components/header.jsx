@@ -4,12 +4,12 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
-import LogoHeader from "./logo.js";
+import LogoHeader from "./logo.jsx";
 import "../App.css";
-import AppBarButtons from "./buttons.js";
-import { ButtonElectronics } from "./buttons.js";
-import { AccountButtons } from "./buttons.js";
-import SearchBar from "./search.js";
+import AppBarButtons from "./buttons.jsx";
+import { ButtonElectronics } from "./buttons.jsx";
+import { AccountButtons } from "./buttons.jsx";
+import SearchBar from "./search.jsx";
 
 function ResponsiveAppBar() {
   return (
