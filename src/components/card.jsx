@@ -44,9 +44,9 @@ export default function MultiActionAreaCard(props) {
       <CardActions sx={{ marginLeft: "auto" }}>
         <Button
           size="small"
-          color="primary"
           variant="outlined"
-          startIcon={<FavoriteBorderOutlinedIcon />}
+          color="primary"
+          startIcon={<FavoriteBorderOutlinedIcon sx={{color: "primary.blue60"}}/>}
         >
           Watch
         </Button>

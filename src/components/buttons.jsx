@@ -45,11 +45,12 @@ function ButtonElectronics() {
     <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
       {pagesElectronics.map((pagesElectronics) => (
         <Button
+            color="primary"
           variant="text"
           key={pagesElectronics}
           sx={{
             my: 2,
-            color: "#2264D1",
+
             display: "block",
             textTransform: "none",
             fontSize: 20,
@@ -71,6 +72,7 @@ function AccountButtons() {
   return (
     <Stack direction="row" spacing={2} marginRight="16px">
       <Button
+          color="primary"
         variant="outlined"
         sx={{
           width: 104,
@@ -80,6 +82,7 @@ function AccountButtons() {
         Sign in
       </Button>
       <Button
+          color="primary"
         sx={{
           width: 104,
           height: 40,

@@ -20,8 +20,9 @@ import CreateSortingFilter from "./components/filtersLeftSide/createFilterCompon
 import CreateYearsFilter from "./components/filtersLeftSide/createYearsFilter";
 import CategoryList from "./components/categoriesFilter";
 import DepartmentButton from "./components/departmentButton";
-import {ThemeProvider} from "@mui/material/styles"
-import theme from "./createTheme"
+// import {ThemeProvider} from "@mui/material/styles"
+// import theme from "./createTheme"
+import {CssBaseline} from "@mui/material";
 
 function CreateCard(cardItem) {
   return (
@@ -56,7 +57,7 @@ function CreateFeatures(featureItem) {
 
 function App() {
   return (
-      <ThemeProvider theme={theme}>
+
     <div>
       <ResponsiveAppBar />
       <Box sx={{ maxWidth: "1492px", m: "0 auto" }}>
@@ -119,7 +120,7 @@ function App() {
         </Grid>
       </Box>
     </div>
-          </ThemeProvider>
+
   );
 }
 

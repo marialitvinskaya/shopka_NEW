@@ -1,16 +1,17 @@
-import React from "react";
-import {createTheme} from "@mui/material/styles";
-import styled from "@mui/material/styles/styled";
-import Tab from "@mui/material/Tab";
 
-let label;
-const theme = createTheme({
-    palette:{
-        primary: {
-main: "#2979FF",
-            dark: "#2264D1",
-            light: "#9DC2FF",
-            superLight: "#EBF2FF"
+import {createTheme} from "@mui/material/styles";
+
+
+            const theme = createTheme({
+
+
+
+                palette:{
+                    primary: {
+                        blue60: "#2979FF",
+                        main: "#2264D1",
+                        light: "#9DC2FF",
+                        superLight: "#EBF2FF"
         },
 grey: {
       100: "#19191D",
@@ -27,18 +28,35 @@ grey: {
             light: "#FDEDF2",
         },
     },
-components: {
-        MuiTabs: {
-            iconWrapper: {
-                color: "secondary",
-            }
+                components: {
+
+                    MuiInputLabel: {
+                        styleOverrides:{
+                            root: {
+                                color: "#787885",
+                                padding: 0
+                            }
+                        },
+                    },
+
+                    MuiOutlinedInput: {
+                        styleOverrides: {
+                            input: {
+                                padding: 0
+                            },
+                        },
+                    },
+                    MuiMenuItem:{
+                        styleOverrides :{
+                            root: {
+                                color: "#19191D"
+                            }
+                        }
+}
 
                 },
-        },
+
 });
-
-
-
 
 
 

@@ -9,7 +9,7 @@ export default function EcomTabs(props) {
   return (
     <Tabs textColor="primary">
       <Tab
-        sx={{ textTransform: "none", color: (theme) => theme.palette.grey[50],
+        sx={{ textTransform: "none", color: (theme) => theme.palette.grey[60],
       }}
         icon={props.icon}
         label={props.label}
