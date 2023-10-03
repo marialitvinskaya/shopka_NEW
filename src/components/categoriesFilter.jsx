@@ -6,8 +6,15 @@ import Collapse from "@mui/material/Collapse";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import subCategory from "../subCategory";
+import Accordion from '@mui/material/Accordion';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import Typography from '@mui/material/Typography';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 
-export default function CategoryList() {
+
+
+ export default function CategoryList() {
   const [open, setOpen] = React.useState(false);
   const [subOpen, setSubOpen] = React.useState(false)
   const handleClick = () => {

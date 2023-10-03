@@ -19,6 +19,10 @@ import ControlledAccordions from "./components/filtersLeftSide/filtersAccordion.
 import CreateSortingFilter from "./components/filtersLeftSide/createFilterComponent";
 import CreateYearsFilter from "./components/filtersLeftSide/createYearsFilter";
 import CategoryList from "./components/categoriesFilter";
+import CategoriesAccordion from "./components/categoriesFilter";
+import DepartmentButton from "./components/departmentButton";
+import {ThemeProvider} from "@mui/material/styles"
+import theme from "./createTheme"
 
 function CreateCard(cardItem) {
   return (
@@ -51,18 +55,9 @@ function CreateFeatures(featureItem) {
   );
 }
 
-// function CreateSortingFilter(filterItem) {
-//   return (
-//     <FilterComponent
-//       key={filterItem.id}
-//       value={filterItem.value}
-//       label={filterItem.label}
-//     />
-//   );
-// }
-
 function App() {
   return (
+      <ThemeProvider theme={theme}>
     <div>
       <ResponsiveAppBar />
       <Box sx={{ maxWidth: "1492px", m: "0 auto" }}>
@@ -82,6 +77,7 @@ function App() {
               py: 1,
             }}
           >
+              <DepartmentButton />
               <CategoryList />
               <ControlledAccordions expandedLabel="Expanded filters" collapsedLabel="Collapsed filters" filterComponent={filterItem.map(CreateSortingFilter)} />
               <ControlledAccordions expandedLabel="Years of manufactoring" collapsedLabel="Years of manufactoring" filterComponent={year.map(CreateYearsFilter)} />
@@ -124,6 +120,7 @@ function App() {
         </Grid>
       </Box>
     </div>
+          </ThemeProvider>
   );
 }
 
