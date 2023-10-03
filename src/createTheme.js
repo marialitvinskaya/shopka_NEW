@@ -29,12 +29,24 @@ grey: {
         },
     },
                 components: {
-
+MuiFormControl:{
+    styleOverrides: {
+        root: {
+            minWidth: 136,
+            
+        },
+    },
+},
+                    MuiSelect: {
+    styleOverrides:{
+        root: {
+height: 36        },
+    },
+                    },
                     MuiInputLabel: {
                         styleOverrides:{
                             root: {
                                 color: "#787885",
-                                padding: 0
                             }
                         },
                     },
@@ -42,7 +54,9 @@ grey: {
                     MuiOutlinedInput: {
                         styleOverrides: {
                             input: {
-                                padding: 0
+                                paddingLeft: 12,
+
+
                             },
                         },
                     },
@@ -50,9 +64,9 @@ grey: {
                         styleOverrides :{
                             root: {
                                 color: "#19191D"
-                            }
-                        }
-}
+                            },
+                        },
+},
 
                 },
 

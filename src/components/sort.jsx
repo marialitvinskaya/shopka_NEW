@@ -26,8 +26,8 @@ export default function BasicSelect() {
 
   return (
     <Stack direction="row" spacing={2}>
-      <FormControl sx={{ minWidth: "136px" }}>
-        <InputLabel id="sortBylabel">Sort By</InputLabel>
+      <FormControl >
+        <InputLabel  id="sortBylabel">Sort By</InputLabel>
         <Select
           labelId="sortBylabel"
           id="sortBySelect"
@@ -40,9 +40,10 @@ export default function BasicSelect() {
           <MenuItem value={3}>Top-rated</MenuItem>
         </Select>
       </FormControl>
-      <FormControl sx={{ minWidth: "136px" }}>
-        <InputLabel id="conditionLabel">Condition</InputLabel>
+      <FormControl >
+        <InputLabel   id="conditionLabel">Condition</InputLabel>
         <Select
+
           labelId="conditionLabel"
           id="conditionSelect"
           value={condition}
@@ -54,7 +55,7 @@ export default function BasicSelect() {
           <MenuItem value={6}></MenuItem>
         </Select>
       </FormControl>
-      <FormControl sx={{ minWidth: "136px" }}>
+      <FormControl >
         <InputLabel id="deliveryLabel">Delivery</InputLabel>
         <Select
           labelId="deliveryLabel"
