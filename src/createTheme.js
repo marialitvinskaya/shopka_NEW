@@ -29,11 +29,21 @@ grey: {
         },
     },
                 components: {
+MuiAccordion: {
+    styleOverrides: {
+        root: {
+            maxWidth: "304px"
+        },
+    },
+
+},
+
+
 MuiFormControl:{
     styleOverrides: {
         root: {
             minWidth: 136,
-            
+
         },
     },
 },

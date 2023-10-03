@@ -7,7 +7,7 @@ import "../App.css";
 
 export default function EcomTabs(props) {
   return (
-    <Tabs textColor="primary">
+    <Tabs  >
       <Tab
         sx={{ textTransform: "none", color: (theme) => theme.palette.grey[60],
       }}

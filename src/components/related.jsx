@@ -25,7 +25,7 @@ export default function ChipsArray() {
 
   return (
     <Stack direction="row" alignItems="center" sx={{ mt: 5, mb: 2 }}>
-      <Typography>Related</Typography>
+      <Typography sx={{color: (theme) => theme.palette.grey[100]}}>Related</Typography>
       <Stack
         direction="row"
         spacing={1}
@@ -42,7 +42,7 @@ export default function ChipsArray() {
         {chipData.map((data) => {
           return (
             <ListItem key={data.key}>
-              <Chip label={data.label} onClick={handleClick} />
+              <Chip  sx={{ color: (theme) => theme.palette.grey[70], backgroundColor: (theme) => theme.palette.grey[5]}} label={data.label} onClick={handleClick} />
             </ListItem>
           );
         })}

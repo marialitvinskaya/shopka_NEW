@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
+import themeTabs from "../createThemeFilterTabs";
+import {ThemeProvider} from "@mui/material/styles";
+
+
+
 
 export default function FilterTabs() {
   const [selectedTab, setSelectedTab] = useState(0);
@@ -10,22 +15,21 @@ export default function FilterTabs() {
   };
 
   return (
+      <ThemeProvider theme={themeTabs}>
     <div>
       <Tabs
         value={selectedTab}
         onChange={handleChange}
-        indicatorColor="primary"
-        textColor="primary"
-        centered
+        indicatorColor="none"
       >
-        <Tab label="Show All" />
-        <Tab label="Auction" />
-        <Tab label="Buy Now" />
+
+        <Tab   label="Show All" />
+        <Tab   label="Auction" />
+        <Tab   label="Buy Now" />
       </Tabs>
 
-      {/* {selectedTab === 0 && <div>Show All Content</div>}
-      {selectedTab === 1 && <div>Auction Content</div>}
-      {selectedTab === 2 && <div>Buy Now Content</div>} */}
+
     </div>
+      </ThemeProvider>
   );
 }

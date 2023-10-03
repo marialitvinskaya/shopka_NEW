@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Checkbox from "@mui/material/Checkbox";
 import { FormGroup } from "@mui/material";
 import { FormControlLabel } from "@mui/material";
-
+import Paper from "@mui/material/Paper"
 
 function FilterComponent (props) {
     const [selectedOption, setSelectedOption] = useState("");
@@ -15,6 +15,7 @@ function FilterComponent (props) {
     };
 
     return (
+
         <FormGroup>
             <FormControlLabel
                 control={
@@ -27,6 +28,7 @@ function FilterComponent (props) {
                 label={props.label}
             />
         </FormGroup>
+
     );
 };
 

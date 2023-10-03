@@ -70,11 +70,13 @@ function App() {
         <Grid container>
           <Box
             sx={{
-              mr: "auto",
-              maxWidth: "304px",
-              bgcolor: "#F7F7FA",
-              px: 2,
-              py: 1,
+display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+              maxWidth: "355px",
+              bgcolor: "#FFE5E5",
+
+              py: 3,
             }}
           >
               <DepartmentButton />
@@ -87,7 +89,7 @@ function App() {
             sx={{
               maxWidth: "1114px",
               ml: "auto",
-              pt: 2,
+              pt: 3,
               pb: 12,
             }}
           >
@@ -101,9 +103,9 @@ function App() {
                 mb: 5,
               }}
             >
-              <Stack direction="row" justifyContent={"space-between"}>
+              <Stack sx={{height: "36px"}} direction="row" justifyContent={"space-between"}>
                 <BasicSelect />
-                <Box sx={{ display: "flex", flexWrap: "nowrap" }}>
+                <Box  sx={{ display: "flex", flexWrap:"nowrap" , height: "36px"}}>
                   <FilterTabs />
                   <CardViewTabs />
                 </Box>
