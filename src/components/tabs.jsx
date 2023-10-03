@@ -1,12 +1,16 @@
 import * as React from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
+import theme from "../createTheme";
+import StyledTab from "../styledTabs";
+import "../App.css";
 
-export default function IconLabelTabs(props) {
+export default function EcomTabs(props) {
   return (
-    <Tabs>
+    <Tabs textColor="primary">
       <Tab
-        sx={{ textTransform: "none" }}
+        sx={{ textTransform: "none", color: (theme) => theme.palette.grey[50],
+      }}
         icon={props.icon}
         label={props.label}
       ></Tab>

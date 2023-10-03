@@ -1,6 +1,9 @@
 import React from "react";
-import {createTheme} from "@mui/material";
+import {createTheme} from "@mui/material/styles";
+import styled from "@mui/material/styles/styled";
+import Tab from "@mui/material/Tab";
 
+let label;
 const theme = createTheme({
     palette:{
         primary: {
@@ -24,8 +27,20 @@ grey: {
             light: "#FDEDF2",
         },
     },
+components: {
+        MuiTabs: {
+            iconWrapper: {
+                color: "secondary",
+            }
 
+                },
+        },
 });
+
+
+
+
+
 
 export default theme;
 

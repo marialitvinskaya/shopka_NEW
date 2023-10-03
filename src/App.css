@@ -26,3 +26,8 @@
 .container {
   display: flex;
 }
+
+.MuiTab-iconWrapper {
+  color: #64CCC5;
+}
+

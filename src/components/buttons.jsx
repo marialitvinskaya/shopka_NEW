@@ -2,6 +2,7 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
+import theme from "../createTheme";
 
 const pages = ["Sell on Shopka", "Register"];
 
@@ -15,10 +16,11 @@ function AppBarButtons() {
     >
       {pages.map((page) => (
         <Button
+            color="secondary"
           key={page}
           sx={{
             my: 2,
-            color: "#5A5B6A",
+              color: (theme) => theme.palette.grey[60],
             display: "block",
             textTransform: "none",
             fontSize: 20,

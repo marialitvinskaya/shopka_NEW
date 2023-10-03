@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 import cardItem from "./carditems.js";
 import MultiActionAreaCard from "./components/card.jsx";
 import Grid from "@mui/material/Grid"; // Grid version 1
-import EcommTabs from "./components/tabs.jsx";
+import EcomTabs from "./components/tabs.jsx";
 import tabLabel from "./tablabels.js";
 import FilterTabs from "./components/filterTabs.jsx";
 import Stack from "@mui/material/Stack";
@@ -19,7 +19,6 @@ import ControlledAccordions from "./components/filtersLeftSide/filtersAccordion.
 import CreateSortingFilter from "./components/filtersLeftSide/createFilterComponent";
 import CreateYearsFilter from "./components/filtersLeftSide/createYearsFilter";
 import CategoryList from "./components/categoriesFilter";
-import CategoriesAccordion from "./components/categoriesFilter";
 import DepartmentButton from "./components/departmentButton";
 import {ThemeProvider} from "@mui/material/styles"
 import theme from "./createTheme"
@@ -40,7 +39,7 @@ function CreateCard(cardItem) {
 
 function CreateTabs(tabLabel) {
   return (
-    <EcommTabs key={tabLabel.id} icon={tabLabel.icon} label={tabLabel.label} />
+    <EcomTabs key={tabLabel.id} icon={tabLabel.icon} label={tabLabel.label}  />
   );
 }
 
