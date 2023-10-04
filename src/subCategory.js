@@ -4,6 +4,7 @@ const subCategory = [{
     subSubCategory: [{
         id: 101,
         name: "Computers & Tablets",
+        additional: "Tablets & Networking"
     },
         {
             id: 102,

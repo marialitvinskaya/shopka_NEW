@@ -2,8 +2,8 @@ import * as React from "react";
 import { styled } from "@mui/material/styles";
 import Chip from "@mui/material/Chip";
 import { Stack } from "@mui/material";
-import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
+import theme from "../createTheme";
 
 const ListItem = styled("li")(({ theme }) => ({
   margin: theme.spacing(0.5),
@@ -25,7 +25,7 @@ export default function ChipsArray() {
 
   return (
     <Stack direction="row" alignItems="center" sx={{ mt: 5, mb: 2 }}>
-      <Typography sx={{color: (theme) => theme.palette.grey[100]}}>Related</Typography>
+      <Typography variant="captionMedium" sx={{color: (theme) => theme.palette.grey[100]}}>Related</Typography>
       <Stack
         direction="row"
         spacing={1}
@@ -42,7 +42,7 @@ export default function ChipsArray() {
         {chipData.map((data) => {
           return (
             <ListItem key={data.key}>
-              <Chip  sx={{ color: (theme) => theme.palette.grey[70], backgroundColor: (theme) => theme.palette.grey[5]}} label={data.label} onClick={handleClick} />
+              <Chip  sx={{ color: (theme) => theme.palette.grey[70], backgroundColor: (theme) => theme.palette.grey[5], ...theme.typography.caption}} label={data.label} onClick={handleClick} />
             </ListItem>
           );
         })}

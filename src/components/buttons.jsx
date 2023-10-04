@@ -4,6 +4,7 @@ import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import theme from "../createTheme";
 
+
 const pages = ["Sell on Shopka", "Register"];
 
 function AppBarButtons() {
@@ -23,9 +24,6 @@ function AppBarButtons() {
               color: (theme) => theme.palette.grey[60],
             display: "block",
             textTransform: "none",
-            fontSize: 20,
-            fontWeight: 500,
-            fontFamily: "inter",
             whiteSpace: "nowrap",
           }}
         >
@@ -50,12 +48,8 @@ function ButtonElectronics() {
           key={pagesElectronics}
           sx={{
             my: 2,
-
             display: "block",
             textTransform: "none",
-            fontSize: 20,
-            fontWeight: 400,
-            fontFamily: "inter",
             whiteSpace: "nowrap",
           }}
         >
@@ -68,33 +62,38 @@ function ButtonElectronics() {
 
 export { ButtonElectronics };
 
-function AccountButtons() {
-  return (
-    <Stack direction="row" spacing={2} marginRight="16px">
-      <Button
-          color="primary"
-        variant="outlined"
-        sx={{
-          width: 104,
-          height: 40,
-        }}
-      >
-        Sign in
-      </Button>
-      <Button
-          color="primary"
-        sx={{
-          width: 104,
-          height: 40,
-          boxShadow:
-            "0px 4px 8px 0px rgba(41, 121, 255, 0.2), 0px 2px 4px 0px rgba(27, 78, 163, 0.2)",
-        }}
-        elevation={1}
-      >
-        My cart
-      </Button>
-    </Stack>
-  );
+    function AccountButtons() {
+        return (
+            <Stack direction="row" spacing={2} marginRight="16px">
+                <Button
+                    color="primary"
+                    variant="outlined"
+                    sx={{
+                        width: 104,
+                        height: 40,
+                        textTransform: "none",
+                        fontWeight: 700,
+                    }}
+                >
+                    Sign in
+                </Button>
+                <Button
+                    color="primary"
+                    sx={{
+                        width: 104,
+                        height: 40,
+                        boxShadow:
+                            "0px 4px 8px 0px rgba(41, 121, 255, 0.2), 0px 2px 4px 0px rgba(27, 78, 163, 0.2)",
+                        textTransform: "none",
+                        fontWeight: 700,
+                    }}
+                    elevation={1}
+                >
+                    My cart
+                </Button>
+            </Stack>
+        );
+
 }
 
 export { AccountButtons };

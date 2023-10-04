@@ -22,8 +22,8 @@ export default function Feature(props) {
       }}
     >
       <IconComponent />
-      <Typography>{props.name}</Typography>
-      <Typography>{props.additional}</Typography>
+      <Typography variant="h6">{props.name}</Typography>
+      <Typography variant="caption">{props.additional}</Typography>
     </Paper>
   );
 }

@@ -14,7 +14,6 @@ export default function BasicSelect() {
 
   function handleChange(event) {
     const { value, id } = event.target;
-    setSortBy(value);
     if (id === "sortBySelect") {
       setSortBy(value);
     } else if (id === "conditionSelect") {

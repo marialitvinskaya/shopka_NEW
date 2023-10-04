@@ -5,7 +5,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
-
+import Grid from "@mui/material/Grid";
 export default function MultiActionAreaCard(props) {
   return (
     <Card
@@ -16,6 +16,7 @@ export default function MultiActionAreaCard(props) {
         flexDirection: "column",
         justifyContent: "space-between",
         margin: 1,
+          alignItems: "baseline",
       }}
       elevation={0}
     >
@@ -33,13 +34,19 @@ export default function MultiActionAreaCard(props) {
         />
 
         <CardContent>
-          <Typography variant="body2" color="text.secondary">
+
+          <Typography variant="description" color="grey[100]" sx={{mb: 1}}>
             {props.description}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
+          <Typography variant="price" color="common.black" sx={{mb: 1}}>
             {props.price}
           </Typography>
+            <Typography variant="caption" color="grey[50]" sx={{mb: 1}}>
+                {props.additional}
+            </Typography>
+
         </CardContent>
+
       </CardActionArea>
       <CardActions sx={{ marginLeft: "auto" }}>
         <Button
@@ -52,5 +59,7 @@ export default function MultiActionAreaCard(props) {
         </Button>
       </CardActions>
     </Card>
+
+
   );
 }

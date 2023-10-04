@@ -26,13 +26,14 @@ import {CssBaseline} from "@mui/material";
 
 function CreateCard(cardItem) {
   return (
-    <Grid item xl={3} key={cardItem.id}>
+    <Grid container item alingItems="baseline" xl={3} key={cardItem.id}>
       <MultiActionAreaCard
         key={cardItem.id}
         img={cardItem.img}
         alt={cardItem.name}
         description={cardItem.description}
         price={cardItem.price}
+        additional={cardItem.additional}
       />
     </Grid>
   );
@@ -74,7 +75,7 @@ display: "flex",
                 flexDirection: "column",
                 justifyContent: "flex-start",
               maxWidth: "355px",
-              bgcolor: "#FFE5E5",
+
 
               py: 3,
             }}

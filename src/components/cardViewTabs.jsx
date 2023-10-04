@@ -3,28 +3,36 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import GridViewSharpIcon from "@mui/icons-material/GridViewSharp";
 import ViewListSharpIcon from "@mui/icons-material/ViewListSharp";
+import {ThemeProvider} from "@mui/material/styles";
+import themeTabs from "../createThemeFilterTabs";
+import {useState} from "react";
 
-const CardViewTabs = ({ view, setView }) => {
+export default function CardViewTabs() {
+      const [view, setView] = useState("grid");
+
   function handleChange(event, newValue) {
     setView(newValue);
   }
 
   return (
-    <Tabs value={view} onChange={handleChange}>
+      <ThemeProvider theme={themeTabs}>
+    <Tabs  value={view} onChange={handleChange} indicatorColor="none" sx={{marginLeft: 3}}>
       <Tab
-        sx={{ width: "68px", heigth: "36px", m: 0 }}
-        icon=<ViewListSharpIcon />
+          sx={{ width: "68px",  m: 0 }}
+        icon=<ViewListSharpIcon sx={{width: "18px"}}/>
         aria-label="List View"
         value="list"
       />
       <Tab
-        sx={{ width: "68px", heigth: "36px", m: 0 }}
-        icon=<GridViewSharpIcon />
+          sx={{ width: "68px",  m: 0 }}
+        icon=<GridViewSharpIcon sx={{width: "18px"}} />
         aria-label="Grid View"
         value="grid"
       />
     </Tabs>
+      </ThemeProvider>
   );
-};
+}
 
-export default CardViewTabs;
+
+
