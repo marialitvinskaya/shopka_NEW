@@ -24,50 +24,50 @@ export default function BasicSelect() {
   }
 
   return (
-    <Stack direction="row" spacing={2}>
-      <FormControl >
-        <InputLabel  id="sortBylabel">Sort By</InputLabel>
-        <Select
-          labelId="sortBylabel"
-          id="sortBySelect"
-          value={sortBy}
-          label="Sort By"
-          onChange={handleChange}
-        >
-          <MenuItem value={1}>The cheapest</MenuItem>
-          <MenuItem value={2}>The most expensive</MenuItem>
-          <MenuItem value={3}>Top-rated</MenuItem>
-        </Select>
-      </FormControl>
-      <FormControl >
-        <InputLabel   id="conditionLabel">Condition</InputLabel>
-        <Select
+      <Stack direction="row" spacing={2}>
+        <FormControl>
+          <InputLabel  id="sortBylabel">Sort By</InputLabel>
+          <Select
+              labelId="sortBylabel"
+              id="sortBySelect"
+              value={sortBy}
+              label="Sort By"
+              onChange={handleChange}
+          >
+            <MenuItem value={1}>The cheapest</MenuItem>
+            <MenuItem value={2}>The most expensive</MenuItem>
+            <MenuItem value={3}>Top-rated</MenuItem>
+          </Select>
+        </FormControl>
+        <FormControl >
+          <InputLabel   id="conditionLabel">Condition</InputLabel>
+          <Select
 
-          labelId="conditionLabel"
-          id="conditionSelect"
-          value={condition}
-          label="Condition"
-          onChange={handleChange}
-        >
-          <MenuItem value={4}></MenuItem>
-          <MenuItem value={5}></MenuItem>
-          <MenuItem value={6}></MenuItem>
-        </Select>
-      </FormControl>
-      <FormControl >
-        <InputLabel id="deliveryLabel">Delivery</InputLabel>
-        <Select
-          labelId="deliveryLabel"
-          id="deliverySelect"
-          value={delivery}
-          label="Delivery"
-          onChange={handleChange}
-        >
-          <MenuItem value={7}></MenuItem>
-          <MenuItem value={8}></MenuItem>
-          <MenuItem value={9}></MenuItem>
-        </Select>
-      </FormControl>
-    </Stack>
+              labelId="conditionLabel"
+              id="conditionSelect"
+              value={condition}
+              label="Condition"
+              onChange={handleChange}
+          >
+            <MenuItem value={4}></MenuItem>
+            <MenuItem value={5}></MenuItem>
+            <MenuItem value={6}></MenuItem>
+          </Select>
+        </FormControl>
+        <FormControl >
+          <InputLabel id="deliveryLabel">Delivery</InputLabel>
+          <Select
+              labelId="deliveryLabel"
+              id="deliverySelect"
+              value={delivery}
+              label="Delivery"
+              onChange={handleChange}
+          >
+            <MenuItem value={7}></MenuItem>
+            <MenuItem value={8}></MenuItem>
+            <MenuItem value={9}></MenuItem>
+          </Select>
+        </FormControl>
+      </Stack>
   );
 }

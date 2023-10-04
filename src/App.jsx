@@ -26,7 +26,7 @@ import {CssBaseline} from "@mui/material";
 
 function CreateCard(cardItem) {
   return (
-    <Grid container item alingItems="baseline" xl={3} key={cardItem.id}>
+
       <MultiActionAreaCard
         key={cardItem.id}
         img={cardItem.img}
@@ -35,7 +35,7 @@ function CreateCard(cardItem) {
         price={cardItem.price}
         additional={cardItem.additional}
       />
-    </Grid>
+
   );
 }
 
@@ -112,7 +112,7 @@ display: "flex",
                 </Box>
               </Stack>
               <ChipsArray />
-              <Grid container sx={{ margin: "0 auto", maxWidth: "1114px" }}>
+              <Grid container dorection="row" alignItems="baseline" >
                 {cardItem.map(CreateCard)}
               </Grid>
             </Box>

@@ -30,7 +30,7 @@ import theme from "../createTheme";
 
         <ListItem button key={props.key} sx={{ pl: 4, display: "flex", flexWrap: "wrap" }}>
 
-          <ListItemText sx={{ display: "flex", flexWrap: "wrap" }} primary={
+          <ListItemText sx={{ display: "flex", flexDirection: "column" }} primary={
             <Typography variant="description" sx={{color: (theme) => theme.palette.grey[100] }} >
             {props.name} </Typography>
           }

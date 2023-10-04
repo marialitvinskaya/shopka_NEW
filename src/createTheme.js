@@ -96,10 +96,17 @@ description: {
                 },
             },
         },
+        MuiInputBase:{
+            styleOverrides: {
+                root: {
+                },
+            },
+        },
         MuiSelect: {
             styleOverrides: {
                 root: {
-                    height: 36
+                    height: 36,
+                    padding: 0,
                 },
             },
         },
@@ -111,7 +118,7 @@ description: {
                     fontSize: "0.875rem",
                     fontWeight: 500,
                     lineHeight: 1.43,
-                }
+                },
             },
         },
 
@@ -138,6 +145,7 @@ MuiCardContent:{
                 root:{
                     display: "flex",
                     flexDirection: "column",
+gap: "8px"
                 },
             },
 },
@@ -162,7 +170,6 @@ MuiListItemText:{
                     marginTop: 0
                 },
             },
-
 },
 
 
