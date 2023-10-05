@@ -96,10 +96,9 @@ description: {
                 },
             },
         },
-        MuiInputBase:{
+        MuiInputBase: {
             styleOverrides: {
-                root: {
-                },
+                root: {},
             },
         },
         MuiSelect: {
@@ -140,39 +139,37 @@ description: {
                 },
             },
         },
-MuiCardContent:{
-            styleOverrides:{
-                root:{
+        MuiCardContent: {
+            styleOverrides: {
+                root: {
                     display: "flex",
                     flexDirection: "column",
-gap: "8px"
+                    gap: "8px"
                 },
             },
-},
-        MuiList:{
+        },
+        MuiList: {
             styleOverrides: {
-                root:{
+                root: {
                     padding: 0
                 },
             },
         },
-        MuiListItem:{
-            styleOverrides:{
-                root:{
+        MuiListItem: {
+            styleOverrides: {
+                root: {
                     padding: 0
                 },
             },
         },
-MuiListItemText:{
-            styleOverrides:{
-                root:{
+        MuiListItemText: {
+            styleOverrides: {
+                root: {
                     marginBottom: 16,
                     marginTop: 0
                 },
             },
-},
-
-
+        },
     },
 });
 
