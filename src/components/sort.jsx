@@ -26,7 +26,7 @@ export default function BasicSelect() {
   return (
       <Stack direction="row" spacing={2}>
         <FormControl>
-          <InputLabel  id="sortBylabel">Sort By</InputLabel>
+          <InputLabel id="sortBylabel">Sort By</InputLabel>
           <Select
               labelId="sortBylabel"
               id="sortBySelect"

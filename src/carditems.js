@@ -12,7 +12,7 @@ const cardItem = [
       "Vintage Typewriter to post awesome stories about UI design and webdev.",
     price: "$49.50",
     additional: "Eligible for Shipping To Mars or somewhere else",
-    rate: "reviews",
+    rate: 4.05,
 
   },
   {
@@ -23,7 +23,7 @@ const cardItem = [
       "Lee Pucker design. Leather botinki for handsome designers. Free shipping.",
     price: "$13.95",
     additional: "1258 bids, 359 watchers $5.95 for shipping",
-    rate: "reviews",
+    rate: 4.56,
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ const cardItem = [
       "Timesaving kitten to save months on development. Playful, cute, cheap!",
     price: "$128.99",
     additional: "Eligible for nothing :(",
-    rate: "reviews",
+    rate: 4.87,
   },
   {
     id: 4,
@@ -43,12 +43,12 @@ const cardItem = [
       "Plastic useless plugs and tubes for high-fidelity prototyping. Fit & Eat!",
     price: "$12.48",
     additional: "Wordwide shitting available Buyers protection possible!",
-    rate: "reviews",
     discount: "50% OFF",
     discountStyle: {
       backgroundColor: theme.palette.green[5],
       color: theme.palette.green[70]
     },
+    rate: 4.99,
   },
   {
     id: 5,
@@ -58,7 +58,7 @@ const cardItem = [
       "Creativity stimulating lotion. Drink every morning to generate better ideas!",
     price: "$12.48",
     additional: "Wordwide shitting available Buyers protection possible!",
-    rate: "reviews",
+    rate: 4.65,
   },
   {
     id: 6,
@@ -67,7 +67,7 @@ const cardItem = [
     description: "Prototyping items to create a lot if useless things...",
     price: "$128.99",
     additional: "Showcasing onHovered state",
-    rate: "reviews",
+    rate: 3.99,
   },
   {
     id: 7,
@@ -76,7 +76,7 @@ const cardItem = [
     description: "John Von Ebalkin SPRING ",
     price: "$13.95",
     additional: "1258 bids, 359 watchers $5.95 for shipping",
-    rate: "reviews",
+    rate: 4.87,
   },
   {
     id: 8,
@@ -86,7 +86,7 @@ const cardItem = [
       "Envelope, Stripes, Pencil and etc. Purchase this kit today and feel OKAY",
     price: "$9.50",
     additional: "Eligible for Shipping To Mars or somewhere else",
-    rate: "reviews",
+    rate: 4.56,
   },
   {
     id: 9,
@@ -96,7 +96,7 @@ const cardItem = [
       "Professional teadrinking set for every designer and developer",
     price: "$128.99",
     additional: "Eligible for nothing :(",
-    rate: "reviews",
+    rate: 4.77,
   },
   {
     id: 10,
@@ -105,7 +105,7 @@ const cardItem = [
     description: "One string Bonsai description",
     price: "$11.68",
     additional: "Wordwide shifting available Buyers protection possible!",
-    rate: "reviews",
+    rate: 4.87,
   },
   {
     id: 11,
@@ -115,7 +115,7 @@ const cardItem = [
       "Simply best item in town to shine bright with your Nine Inch Nails",
     price: "$1.25",
     additional: "Eligible for Shipping To Mars or somewhere else",
-    rate: "reviews",
+    rate: 4.77,
     discount: "Cool deal!",
     discountStyle: {
       backgroundColor: theme.palette.pink[5],
@@ -130,7 +130,7 @@ const cardItem = [
       "KISTOCHKI & KRASIBO. Top cosmetics brand from Chelyabinsk is here!",
     price: "$23.25",
     additional: "1258 bids, 359 watchers $5.95 for shipping",
-    rate: "reviews",
+    rate: 4.56,
   },
 ];
 

@@ -24,7 +24,7 @@ import DiscountButton from "./components/discountButtons";
 // import {ThemeProvider} from "@mui/material/styles"
 // import theme from "./createTheme"
 import {CssBaseline} from "@mui/material";
-
+import {useState} from "react";
 
 
 
@@ -40,17 +40,21 @@ function CreateCard(cardItem) {
         additional={cardItem.additional}
         discount={cardItem.discount}
 discountStyle={cardItem.discountStyle}
-        rate={cardItem.rate}
+rate={cardItem.rate}
       />
 
   );
 }
 
+
 function CreateTabs(tabLabel) {
-  return (
-    <EcomTabs key={tabLabel.id} icon={tabLabel.icon} label={tabLabel.label}  />
-  );
+    return (
+        <EcomTabs key={tabLabel.id} icon={tabLabel.icon} label={tabLabel.label}  />
+    );
 }
+
+
+
 
 function CreateFeatures(featureItem) {
   return (
@@ -72,9 +76,9 @@ function App() {
       <Box sx={{ maxWidth: "1492px", m: "0 auto" }}>
         <Grid
           container
-          sx={{ mx: "auto", maxWidth: "1492px", flexWrap: "nowrap" }}
+          sx={{ mx: "auto", maxWidth: "1492px", flexWrap: "nowrap", alignItems: "baseline"}}
         >
-          {tabLabel.map(CreateTabs)}
+            {tabLabel.map(CreateTabs)}
         </Grid>
         <Grid container>
           <Box
@@ -120,7 +124,7 @@ display: "flex",
                 </Box>
               </Stack>
               <ChipsArray />
-              <Grid container dorection="row" alignItems="baseline" >
+              <Grid container direction="row" alignItems="baseline" rowSpacing={2} >
                 {cardItem.map(CreateCard)}
               </Grid>
             </Box>

@@ -109,7 +109,8 @@ description: {
         MuiSelect: {
             styleOverrides: {
                 root: {
-                    height: 36,
+                    position: "relative",
+height: "36px",
                     padding: 0,
                 },
             },
@@ -122,6 +123,7 @@ description: {
                     fontSize: "0.875rem",
                     fontWeight: 500,
                     lineHeight: 1.43,
+                    top: "-22%",
                 },
             },
         },
@@ -144,19 +146,7 @@ description: {
                 },
             },
         },
-        MuiCard: {
-            styleOverrides: {
-                root: {
-                    "&.Mui-selected": {
-                        color: "#2264D1",
-                        backgroundColor: "#fff",
-                        borderRadius: "4px",
-                        boxShadow:
-                            "0px 2px 4px 0px rgba(41, 121, 255, 0.24), 0px 1px 2px 0px rgba(27, 78, 163, 0.24)",
-                    },
-                },
-            },
-        },
+
         MuiCardContent: {
             styleOverrides: {
                 root: {
@@ -195,6 +185,24 @@ description: {
                 root: {
                     marginBottom: 16,
                     marginTop: 0
+                },
+            },
+        },
+        MuiTab: {
+            styleOverrides: {
+                root: {
+        //             color: "787885",
+        //             padding: 0,
+        //             textTransform: "none",
+        //             fontFamily: "Inter",
+        //             fontSize: "0.875rem",
+        //             fontWeight: 400,
+        //             lineHeight: 1.43,
+
+                    "&.Mui-selected": {
+                        color: "#2264D1",
+
+                    },
                 },
             },
         },
