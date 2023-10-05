@@ -1,4 +1,9 @@
+import theme from "./createTheme";
+
+
 const cardItem = [
+
+
   {
     id: 1,
     img: "/assets/EcommerceItem/Image-11.png",
@@ -8,6 +13,7 @@ const cardItem = [
     price: "$49.50",
     additional: "Eligible for Shipping To Mars or somewhere else",
     rate: "reviews",
+
   },
   {
     id: 2,
@@ -38,6 +44,11 @@ const cardItem = [
     price: "$12.48",
     additional: "Wordwide shitting available Buyers protection possible!",
     rate: "reviews",
+    discount: "50% OFF",
+    discountStyle: {
+      backgroundColor: theme.palette.green[5],
+      color: theme.palette.green[70]
+    },
   },
   {
     id: 5,
@@ -105,6 +116,11 @@ const cardItem = [
     price: "$1.25",
     additional: "Eligible for Shipping To Mars or somewhere else",
     rate: "reviews",
+    discount: "Cool deal!",
+    discountStyle: {
+      backgroundColor: theme.palette.pink[5],
+      color: theme.palette.pink[70],
+    },
   },
   {
     id: 12,

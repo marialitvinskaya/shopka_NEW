@@ -20,9 +20,13 @@ import CreateSortingFilter from "./components/filtersLeftSide/createFilterCompon
 import CreateYearsFilter from "./components/filtersLeftSide/createYearsFilter";
 import CategoryList from "./components/categoriesFilter";
 import DepartmentButton from "./components/departmentButton";
+import DiscountButton from "./components/discountButtons";
 // import {ThemeProvider} from "@mui/material/styles"
 // import theme from "./createTheme"
 import {CssBaseline} from "@mui/material";
+
+
+
 
 function CreateCard(cardItem) {
   return (
@@ -34,6 +38,9 @@ function CreateCard(cardItem) {
         description={cardItem.description}
         price={cardItem.price}
         additional={cardItem.additional}
+        discount={cardItem.discount}
+discountStyle={cardItem.discountStyle}
+        rate={cardItem.rate}
       />
 
   );
@@ -52,6 +59,7 @@ function CreateFeatures(featureItem) {
       icon={featureItem.icon}
       name={featureItem.name}
       additional={featureItem.additional}
+
     />
   );
 }

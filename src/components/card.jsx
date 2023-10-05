@@ -7,7 +7,9 @@ import { Button, CardActionArea, CardActions } from "@mui/material";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-
+import cardItem from "../carditems";
+import DiscountButton from "./discountButtons";
+import Stack from "@mui/material/Stack";
 export default function MultiActionAreaCard(props) {
   return (
 
@@ -18,13 +20,13 @@ export default function MultiActionAreaCard(props) {
         height: "472px",
         display: "flex",
         flexDirection: "column",
+          justifyContent: "space-between",
         margin: "auto",
-          justifyContent: "space-between"
 
       }}
       elevation={0}
     >
-      <CardActionArea>
+      <CardActionArea  >
         <CardMedia
           component="img"
           style={{
@@ -37,24 +39,30 @@ export default function MultiActionAreaCard(props) {
           alt={props.name}
         />
 
-        <CardContent>
+        <CardContent >
 <Box sx={{minHeight: "74px" }}>
           <Typography variant="description" color="grey[100]" >
             {props.description}
           </Typography>
 </Box>
+            <Stack direction="row" justifyContent="space-between" alignItems="center" >
           <Typography variant="price" color="common.black">
             {props.price}
           </Typography>
+            <DiscountButton content={props.discount} style={props.discountStyle} />
+            </Stack>
             <Typography variant="caption" color="grey[50]" >
                 {props.additional}
             </Typography>
 
         </CardContent>
-
       </CardActionArea>
-      <CardActions sx={{ marginLeft: "auto" }}>
+      <CardActions >
+          <Box>
+              {props.rate}
+          </Box>
         <Button
+            sx={{ marginLeft: "auto"}}
           size="small"
           variant="outlined"
           color="primary"

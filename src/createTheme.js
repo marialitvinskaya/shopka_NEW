@@ -74,11 +74,16 @@ description: {
             5: "#EDEDF0",
             0: "#F7F7FA",
         },
-        secondary: {
-            main: "#C23564",
-            light: "#FDEDF2",
+        pink: {
+            70: "#C23564",
+            5: "#FDEDF2",
+        },
+        green: {
+            70: "#37833B",
+5: "#ECF7ED",
         },
     },
+
     components: {
         MuiAccordion: {
             styleOverrides: {
@@ -139,12 +144,35 @@ description: {
                 },
             },
         },
+        MuiCard: {
+            styleOverrides: {
+                root: {
+                    "&.Mui-selected": {
+                        color: "#2264D1",
+                        backgroundColor: "#fff",
+                        borderRadius: "4px",
+                        boxShadow:
+                            "0px 2px 4px 0px rgba(41, 121, 255, 0.24), 0px 1px 2px 0px rgba(27, 78, 163, 0.24)",
+                    },
+                },
+            },
+        },
         MuiCardContent: {
             styleOverrides: {
                 root: {
                     display: "flex",
                     flexDirection: "column",
-                    gap: "8px"
+                    alignContent: "space-between",
+                },
+            },
+        },
+
+        MuiAccordionActions:{
+            styleOverrides:{
+                root: {
+                    display: "flex",
+                    flexDirection: "column",
+                   alignItems: "flex-end",
                 },
             },
         },
