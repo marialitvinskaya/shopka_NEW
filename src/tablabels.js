@@ -1,5 +1,6 @@
 import React from "react";
-
+import "./App.css";
+import theme from "./createTheme"
 const tabLabel = [
   {
     id: 1,
@@ -11,7 +12,8 @@ const tabLabel = [
     id: 2,
     value: 2,
     label: "Entertainment",
-    icon: <img src="/assets/shoppingTabs/Vector-10.svg" alt="Clothing icon" />,
+    icon: <img
+        src="/assets/shoppingTabs/Vector-10.svg" alt="Clothing icon" />,
   },
   {
     id: 3,

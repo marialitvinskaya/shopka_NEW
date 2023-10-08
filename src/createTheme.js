@@ -199,10 +199,8 @@ height: "36px",
                 root: {
                    whiteSpace: "nowrap",
 padding: 0,
-
                     "&.Mui-selected": {
                         color: "#2264D1",
-
                     },
                 },
             },

@@ -18,12 +18,9 @@ export default function EcomTabs(props) {
 
         return (
             <Grid container  >
-            <Grid item sx={{width: "100%"}}>
+            <Grid item  sx={{width: "100%"}}>
 
-        <Tabs value={value} onChange={handleChange} indicatorColor="none" variant="fullWidth" sx={{
-                "& .MuiTouchRipple-root": {
-                    width: 0,
-                }}}>
+        <Tabs value={value} onChange={handleChange} indicatorColor="none" variant="fullWidth" >
             {tabLabel.map((o) => (
                 <Tab
 
@@ -38,10 +35,9 @@ export default function EcomTabs(props) {
                         flexGrow: 1,
                         minWidth: 0,
 mx: "auto",
-                        '.&MuiButtonBase':{
-                            minWidth: 0,
+                        "&.MuiIcon-root": {
+                            color: "#9696A0",
                         }
-
                     }}
 
                 ></Tab>
