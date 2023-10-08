@@ -13,48 +13,36 @@ import CardViewTabs from "./components/cardViewTabs.jsx";
 import featureItem from "./featuresitems.js";
 import Feature from "./components/features.jsx";
 import ChipsArray from "./components/related.jsx";
-import filterItem from "./filterItems.js";
-import year from "./yearOfManufactoring"
-import ControlledAccordions from "./components/filtersLeftSide/filtersAccordion.jsx"
-import CreateSortingFilter from "./components/filtersLeftSide/createFilterComponent";
-import CreateYearsFilter from "./components/filtersLeftSide/createYearsFilter";
+import ControlledAccordionsYear from "./components/filtersLeftSide/yearsAccordion.jsx"
+import ControlledAccordionsSort from "./components/filtersLeftSide/sortAccordion";
 import CategoryList from "./components/categoriesFilter";
 import DepartmentButton from "./components/departmentButton";
-import DiscountButton from "./components/discountButtons";
+import {useState} from "react";
 // import {ThemeProvider} from "@mui/material/styles"
 // import theme from "./createTheme"
-import {CssBaseline} from "@mui/material";
-import {useState} from "react";
+
+
+
 
 
 
 function CreateCard(cardItem) {
-  return (
-
-      <MultiActionAreaCard
-        key={cardItem.id}
-        img={cardItem.img}
-        alt={cardItem.name}
-        description={cardItem.description}
-        price={cardItem.price}
-        additional={cardItem.additional}
-        discount={cardItem.discount}
-discountStyle={cardItem.discountStyle}
-rate={cardItem.rate}
-      />
-
-  );
-}
-
-
-function CreateTabs(tabLabel) {
     return (
-        <EcomTabs key={tabLabel.id} icon={tabLabel.icon} label={tabLabel.label}  />
+
+        <MultiActionAreaCard
+            key={cardItem.id}
+            img={cardItem.img}
+            alt={cardItem.name}
+            description={cardItem.description}
+            price={cardItem.price}
+            additional={cardItem.additional}
+            discount={cardItem.discount}
+            discountStyle={cardItem.discountStyle}
+            rate={cardItem.rate}
+        />
+
     );
 }
-
-
-
 
 function CreateFeatures(featureItem) {
   return (
@@ -74,12 +62,7 @@ function App() {
     <div>
       <ResponsiveAppBar />
       <Box sx={{ maxWidth: "1492px", m: "0 auto" }}>
-        <Grid
-          container
-          sx={{ mx: "auto", maxWidth: "1492px", flexWrap: "nowrap", alignItems: "baseline"}}
-        >
-            {tabLabel.map(CreateTabs)}
-        </Grid>
+             <EcomTabs  />
         <Grid container>
           <Box
             sx={{
@@ -94,8 +77,9 @@ display: "flex",
           >
               <DepartmentButton />
               <CategoryList />
-              <ControlledAccordions expandedLabel="Expanded filters" collapsedLabel="Collapsed filters" filterComponent={filterItem.map(CreateSortingFilter)} />
-              <ControlledAccordions expandedLabel="Years of manufactoring" collapsedLabel="Years of manufactoring" filterComponent={year.map(CreateYearsFilter)} />
+              <ControlledAccordionsSort expandedLabel="Expanded filters" collapsedLabel="Collapsed filters"  />
+              <ControlledAccordionsYear expandedLabel="Years of manufactoring" collapsedLabel="Years of manufactoring"  />
+
 
           </Box>
           <Box

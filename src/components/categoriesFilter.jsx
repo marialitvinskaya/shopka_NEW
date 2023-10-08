@@ -6,6 +6,8 @@ import Collapse from "@mui/material/Collapse";
 import Typography from "@mui/material/Typography";
 import subCategory from "../subCategory";
 import theme from "../createTheme";
+import FilterButton from "./filtersButtons";
+
 
 
  export default function CategoryList() {
@@ -77,7 +79,7 @@ import theme from "../createTheme";
               </List>
             </Collapse>
           </List>
-          <List>
+            <List>
             <ListItem button sx={{pl:1}} onClick={() => handleSubClick(2)}>
               <ListItemText primary="Collectibles & Art" />
             </ListItem>
@@ -97,6 +99,7 @@ import theme from "../createTheme";
               </List>
             </Collapse>
           </List>
+            <FilterButton content="Show more" />
           <List>
             <ListItem button sx={{pl:1}} onClick={() => handleSubClick(4)}>
               <ListItemText primary="Sporting goods" />
@@ -127,6 +130,7 @@ import theme from "../createTheme";
               </List>
             </Collapse>
           </List>
+            <FilterButton content="Expand" />
           <List>
             <ListItem button sx={{pl:1}} onClick={() => handleSubClick(7)}>
               <ListItemText primary="Toys & Hobbies" />

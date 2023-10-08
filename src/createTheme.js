@@ -37,6 +37,12 @@ description: {
         fontWeight: 500,
         lineHeight: 1.5,
     },
+    descriptionBoldRob: {
+        fontFamily: "Roboto",
+        fontSize: "1rem",
+        fontWeight: 700,
+        lineHeight: 1.5,
+    },
     h6: {
         fontFamily: "Quicksand",
         fontSize: "1.25rem",
@@ -191,13 +197,8 @@ height: "36px",
         MuiTab: {
             styleOverrides: {
                 root: {
-        //             color: "787885",
-        //             padding: 0,
-        //             textTransform: "none",
-        //             fontFamily: "Inter",
-        //             fontSize: "0.875rem",
-        //             fontWeight: 400,
-        //             lineHeight: 1.43,
+                   whiteSpace: "nowrap",
+padding: 0,
 
                     "&.Mui-selected": {
                         color: "#2264D1",

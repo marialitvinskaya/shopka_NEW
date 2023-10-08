@@ -5,9 +5,11 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Paper from "@mui/material/Paper";
+import ControlledRadioButtonsGroup from "./sortRadio";
+import SortRadio from "./sortRadio"
+import YearsRadio from "./yearsRadio";
 
-
-export default function ControlledAccordions(props) {
+export default function ControlledAccordionsSort(props) {
     const [expanded, setExpanded] = useState(false);
 const[label, setLabel] = useState(props.collapsedLabel);
 
@@ -33,8 +35,7 @@ const[label, setLabel] = useState(props.collapsedLabel);
                     <Typography onChange={handleChange('panel')} >{label}</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-
-                    {props.filterComponent}
+                    <SortRadio />
                 </AccordionDetails>
 
 
