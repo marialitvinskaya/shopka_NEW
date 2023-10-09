@@ -17,10 +17,10 @@ export default function EcomTabs(props) {
 
 
         return (
-            <Grid container  >
-            <Grid item  sx={{width: "100%"}}>
 
-        <Tabs value={value} onChange={handleChange} indicatorColor="none" variant="fullWidth" >
+
+        <Tabs value={value} onChange={handleChange} indicatorColor="none" >
+
             {tabLabel.map((o) => (
                 <Tab
 
@@ -32,19 +32,13 @@ export default function EcomTabs(props) {
                         textTransform: "none",
                         color: (theme) => theme.palette.grey[60],
                         ...theme.typography.caption,
-                        flexGrow: 1,
-                        minWidth: 0,
-mx: "auto",
-                        "&.MuiIcon-root": {
-                            color: "#9696A0",
-                        }
+flex: 1
                     }}
 
                 ></Tab>
                 )
             )}
         </Tabs>
-            </Grid>
-            </Grid>
+
     );
 }

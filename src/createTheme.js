@@ -194,10 +194,12 @@ height: "36px",
                 },
             },
         },
+
         MuiTab: {
             styleOverrides: {
                 root: {
                    whiteSpace: "nowrap",
+
 padding: 0,
                     "&.Mui-selected": {
                         color: "#2264D1",
