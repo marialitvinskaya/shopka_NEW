@@ -30,7 +30,7 @@ function valuetext(value) {
 }
 
 export default function RangeSlider() {
-    const [value, setValue] = React.useState([10, 200]);
+    const [value, setValue] = React.useState([10, 300]);
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -63,7 +63,7 @@ export default function RangeSlider() {
                 onChange={handleChange}
                 getAriaValueText={valuetext}
                 min={10}
-                max={200}
+                max={300}
                 valueLabelDisplay="on"
                 valueLabelFormat={(value) => `$${value}`}
                 sx={{

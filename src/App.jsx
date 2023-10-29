@@ -28,13 +28,17 @@ function App() {
     const [query, setQuery] = useState("");
     const [sortBy, setSortBy] = useState(null);
     const [btn, setBtn] = useState("");
+    const [priceRange, setPriceRange] = React.useState([10, 300]);
 
     const handleSort = (order) => {
         setSortBy(order); // Set the sorting order
     };
 
+const handlePriceRange = (event, newValue) =>
+    setPriceRange(newValue);
+console.log(priceRange);
 
-    const filterData = (query, data, sortBy, btn) => {
+    const filterData = (query, data, sortBy, btn, priceRange) => {
         let filteredData = [...dataWithDiscount];
 
         if (sortBy === "asc") {
@@ -52,22 +56,28 @@ function App() {
                 (d) =>
                     d.name.toLowerCase().includes(query.toLowerCase()) ||
                     d.description.toLowerCase().includes(query.toLowerCase()) ||
-                    d.priceAfterDiscount.toString().includes(query)
+                    d.priceAfterDiscount.toString().includes(query) &&
+                    d.priceAfterDiscount >= priceRange[0] &&
+                    d.priceAfterDiscount <= priceRange[1]
             );
         } else if (!query && btn) {
             return filteredData.filter(
                 (d) =>
-                    d.review.toFixed(1) >= btn);
+                    d.review.toFixed(1) >= btn &&
+            d.priceAfterDiscount >= priceRange[0] &&
+            d.priceAfterDiscount <= priceRange[1]
+        );
         } else {
             return filteredData.filter(
                 (d) =>
                     d.name.toLowerCase().includes(query.toLowerCase()) ||
                     d.description.toLowerCase().includes(query.toLowerCase()) ||
                     d.priceAfterDiscount.toString().includes(query) &&
-                    d.review.toFixed(1) >= btn
+                    d.review.toFixed(1) >= btn &&
+                    d.priceAfterDiscount >= priceRange[0] &&
+                    d.priceAfterDiscount <= priceRange[1]
             );
-        }
-    }
+    }}
 
     // if (btn) {
     //   filteredData=filteredData.filter(
@@ -78,7 +88,7 @@ function App() {
     //   return filteredData;
     // }
 
-    const filteredData = filterData(query, dataWithDiscount, sortBy, btn);
+    const filteredData = filterData(query, dataWithDiscount, sortBy, btn, priceRange);
 
     return (
         <div>
@@ -94,7 +104,7 @@ function App() {
                 >
                     <Box sx={{mb: 5}}>
                         <Typography variant="descriptionBoldRob">Price Range Selected</Typography>
-                        <RangeSlider/>
+                        <RangeSlider priceRange={priceRange} onChange={handlePriceRange}/>
                     </Box>
                     <CustomerReviews setBtn={setBtn}/>
                 </Grid>
