@@ -7,26 +7,30 @@ import { Button, CardActionArea, CardActions } from "@mui/material";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import cardItem from "../carditems";
 import DiscountButton from "./discountButtons";
 import Stack from "@mui/material/Stack";
 import TextRating from "./review";
 import theme from "../createTheme";
-import Paper from "@mui/material/Paper";
-
-
+import priceAfterDiscount from "./priceAfterDiscount";
 export default function MultiActionAreaCard(props) {
-  return (
 
-          <Grid item xl={3}  >
+    //  function priceAfterDiscount() {
+    //     return (
+    //         (props.price - ((props.price * props.discount) / 100)).toFixed(2)
+    //     )
+    // }
+
+    return (
+        <Grid item xs={12} sm={6} md={3} lg={3} key={props.id} sx={{p: 0, width: "25%"}}>
     <Card
       sx={{
-        maxWidth: 259,
-        height: "472px",
+          minWidth: "258px",
+          height: "100%",
         display: "flex",
         flexDirection: "column",
           justifyContent: "space-between",
-        margin: "auto",
+          p: 2,
+          alignItems: "center",
           "&:hover": {
               backgroundColor: "#fff",
               boxShadow: "0px 4px 8px 0px rgba(92, 107, 192, 0.2), 0px 2px 4px 0px rgba(59, 69, 123, 0.2)",
@@ -37,44 +41,51 @@ export default function MultiActionAreaCard(props) {
     >
 
       <CardActionArea >
+
         <CardMedia
           component="img"
-          style={{
+          sx={{
             height: "224px",
             width: "227px",
             objectFit: "cover",
-            margin: "auto",
+              mx: "auto", mb: 1.5
           }}
           image={props.img}
-          alt={props.name}
         />
 
-        <CardContent >
-<Box sx={{minHeight: "74px" }}>
-          <Typography variant="description" color="grey[100]" >
+
+          <CardContent sx={{p: 0, mt: 1.5, mb: 1}}>
+              <Stack direction="column" sx={{p: 0}}>
+                  <Typography variant="description" color="grey[100]" sx={{minHeight: "100px"}}>
             {props.description}
           </Typography>
-</Box>
-            <Stack direction="row" justifyContent="space-between" alignItems="center" >
-          <Typography variant="price" color="common.black">
-            {props.price}
+                  <Stack sx={{mt: "auto", alignItems: "baseline"}} direction="row" justifyContent="space-between"
+                         alignItems="center">
+                      <Typography variant="price" color="common.black" sx={{my: 1}}>
+                          {priceAfterDiscount(props)} {props.currency.toLowerCase()}
           </Typography>
-            <DiscountButton content={props.discount} style={props.discountStyle} />
+                      <DiscountButton content={props.discount}/>
             </Stack>
-            <Typography variant="caption" color="grey[50]" >
-                {props.additional}
-            </Typography>
-
+                  <Typography variant="caption" color="grey[50]">
+                      ${props.shipping.cost} for shipping. {props.shipping.method} shipping method.
+                      Delivery {props.shipping.estimatedDelivery}
+                  </Typography>
+              </Stack>
         </CardContent>
+
       </CardActionArea>
-
-      <CardActions >
-          <Stack sx={{width: "100%" }} direction="row" justifyContent={"space-between"}>
-
+        <Box sx={{width: "100%", display: "flex", direction: "row", justifyContent: "space-between"}}>
+            <CardActions sx={{
+                width: "100%",
+                p: 0,
+                mt: 1
+            }}>
               <TextRating rate={props.rate} />
-
         <Button
-            sx={{ ml: "auto"}}
+            sx={{
+                ml: "auto", p: 0, ...theme.typography.button, minWidth: "88px",
+                minHeight: "32px"
+            }}
           size="small"
           variant="outlined"
           color="primary"
@@ -82,11 +93,10 @@ export default function MultiActionAreaCard(props) {
         >
           Watch
         </Button>
-          </Stack>
-      </CardActions>
+
+            </CardActions>
+        </Box>
     </Card>
-          </Grid>
-
-
-  );
+        </Grid>
+    );
 }

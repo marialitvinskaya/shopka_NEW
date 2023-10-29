@@ -10,14 +10,15 @@ import AppBarButtons from "./buttons.jsx";
 import { ButtonElectronics } from "./buttons.jsx";
 import { AccountButtons } from "./buttons.jsx";
 import SearchBar from "./search.jsx";
+import Stack from "@mui/material/Stack";
 
-function ResponsiveAppBar() {
+function ResponsiveAppBar({query, setQuery}) {
   return (
     <AppBar
       position="static"
       disableGutters
       sx={{
-        backgroundColor: "#fff",
+          backgroundColor: "#fff", maxWidth: "1383px"
       }}
       elevation={0}
     >
@@ -30,15 +31,12 @@ function ResponsiveAppBar() {
         }}
       >
         <Toolbar disableGutters>
-          <LogoHeader />
-
-          <AppBarButtons />
-          <SearchBar />
-          <ButtonElectronics />
+            <LogoHeader/>
+            <SearchBar setQuery={setQuery} sx={{mx: "55px"}}/>
+            <Stack direction="row" sx={{ml: "auto"}}>
           <AccountButtons />
-          <Box sx={{ flexGrow: 0 }}>
-            <Avatar alt="User Pic" src="/static/images/avatar/2.jpg" />
-          </Box>
+                <Avatar alt="User Pic" src="/assets/Edward Powlowski.svg"/>
+            </Stack>
         </Toolbar>
       </Container>
     </AppBar>

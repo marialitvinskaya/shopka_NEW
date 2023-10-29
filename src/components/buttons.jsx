@@ -64,34 +64,26 @@ export { ButtonElectronics };
 
     function AccountButtons() {
         return (
-            <Stack direction="row" spacing={2} marginRight="16px">
-                <Button
+
+
+            <Button
                     color="primary"
-                    variant="outlined"
                     sx={{
-                        width: 104,
+                        minWidth: 104,
                         height: 40,
                         textTransform: "none",
                         fontWeight: 700,
+                        fontSize: "20px",
+                        mx: 3.25,
+                        py: 1,
+                        px: 1.5,
+                        border: "1px solid",
+                        borderColor: theme.palette.primary.light,
                     }}
                 >
-                    Sign in
+                Watch
                 </Button>
-                <Button
-                    color="primary"
-                    sx={{
-                        width: 104,
-                        height: 40,
-                        boxShadow:
-                            "0px 4px 8px 0px rgba(41, 121, 255, 0.2), 0px 2px 4px 0px rgba(27, 78, 163, 0.2)",
-                        textTransform: "none",
-                        fontWeight: 700,
-                    }}
-                    elevation={1}
-                >
-                    My cart
-                </Button>
-            </Stack>
+
         );
 
 }

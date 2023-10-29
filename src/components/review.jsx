@@ -26,11 +26,16 @@ export default function TextRating({rate}) {
             sx={{
                 width: 122,
                 display: 'flex',
+                directionFlex: "row",
                 alignItems: 'center',
+                justifyContent: "flex-start",
+                flexWrap: "nowrap",
+                m: 0,
+                p: 0
             }}
         >
             <Rating
-                sx={{color: "#FB8200"}}
+                sx={{color: "#FB8200", m: 0}}
                 size="small"
                 name="text-feedback"
                 value={value}
@@ -38,7 +43,7 @@ export default function TextRating({rate}) {
                 precision={0.5}
                 emptyIcon={<StarBorderOutlinedIcon  style={{  color: "#FB8200", fontSize: "inherit"}}  />}
             />
-            <Box sx={{ ml: 1, ...theme.typography.descriptionMedium, fontFamily: "roboto", color: "#5E6366"}}>{rate}</Box>
+            <Box sx={{ml: 1, ...theme.typography.captionMedium, fontFamily: "roboto", color: "#5E6366"}}>{rate}</Box>
         </Box>
     );
 }

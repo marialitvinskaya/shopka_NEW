@@ -44,10 +44,10 @@ const cardItem = [
     price: "$12.48",
     additional: "Wordwide shitting available Buyers protection possible!",
     discount: "50% OFF",
-    discountStyle: {
-      backgroundColor: theme.palette.green[5],
-      color: theme.palette.green[70]
-    },
+      // discountStyle: {
+      //   backgroundColor: theme.palette.green[5],
+      //   color: theme.palette.green[70]
+      // },
     rate: 4.99,
   },
   {
@@ -117,10 +117,10 @@ const cardItem = [
     additional: "Eligible for Shipping To Mars or somewhere else",
     rate: 4.77,
     discount: "Cool deal!",
-    discountStyle: {
-      backgroundColor: theme.palette.pink[5],
-      color: theme.palette.pink[70],
-    },
+      // discountStyle: {
+      //   backgroundColor: theme.palette.pink[5],
+      //   color: theme.palette.pink[70],
+      // },
   },
   {
     id: 12,

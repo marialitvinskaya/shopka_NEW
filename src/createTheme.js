@@ -1,5 +1,5 @@
 import {createTheme} from "@mui/material/styles";
-
+import {isDisabled} from "@testing-library/user-event/dist/utils";
 
 const theme = createTheme({
 typography: {
@@ -33,8 +33,8 @@ description: {
 },
     descriptionMedium: {
         fontFamily: "Inter",
-        fontSize: "1rem",
         fontWeight: 500,
+        fontSize: "1rem",
         lineHeight: 1.5,
     },
     descriptionBoldRob: {
@@ -51,15 +51,16 @@ description: {
     },
     button: {
         fontFamily: "Inter",
-        fontSize: "1.25rem",
         fontWeight: 500,
         lineHeight: 1.58,
+        textTransform: "none"
     },
     searchInput: {
         fontFamily: "Inter",
         fontSize: "1.25rem",
         fontWeight: 400,
         lineHeight: 1.58,
+        color: "#19191D",
     },
 },
 
@@ -91,14 +92,23 @@ description: {
     },
 
     components: {
-        MuiAccordion: {
+        MuiButton: {
             styleOverrides: {
                 root: {
-                    maxWidth: "304px"
+                    margin: 0,
+                    p: 0,
+                    '&:hover': {
+                        '& .MuiTouchRipple-root': {
+                            backgroundColor: 'transparent', // Set the ripple color to transparent on hover
+                        },
+                    },
+                    '& .MuiTouchRipple-root': {
+                        backgroundColor: 'transparent', // Set the ripple color to transparent on hover
+                    },
                 },
             },
-
         },
+
         MuiFormControl: {
             styleOverrides: {
                 root: {
@@ -195,18 +205,7 @@ height: "36px",
             },
         },
 
-        MuiTab: {
-            styleOverrides: {
-                root: {
-                   whiteSpace: "nowrap",
 
-padding: 0,
-                    "&.Mui-selected": {
-                        color: "#2264D1",
-                    },
-                },
-            },
-        },
     },
 });
 

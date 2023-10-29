@@ -32,17 +32,23 @@ export default function ChipsArray() {
         sx={{
           display: "flex",
           justifyContent: "center",
-          flexWrap: "wrap",
+            flexWrap: "nowrap",
           listStyle: "none",
-          p: 0.5,
-          m: 0,
+            p: 0,
+            mx: 0.5,
         }}
         component="ul"
       >
         {chipData.map((data) => {
           return (
             <ListItem key={data.key}>
-              <Chip  sx={{ color: (theme) => theme.palette.grey[70], backgroundColor: (theme) => theme.palette.grey[5], ...theme.typography.caption}} label={data.label} onClick={handleClick} />
+                <Chip sx={{
+                    height: "32px",
+                    px: 1.5,
+                    py: 0.75,
+                    color: (theme) => theme.palette.grey[70],
+                    backgroundColor: (theme) => theme.palette.grey[5], ...theme.typography.caption
+                }} label={data.label} onClick={handleClick}/>
             </ListItem>
           );
         })}

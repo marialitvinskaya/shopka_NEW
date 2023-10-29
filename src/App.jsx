@@ -1,126 +1,146 @@
-import React from "react";
+import React, {useState} from "react";
 import ResponsiveAppBar from "./components/header.jsx";
 import Box from "@mui/material/Box";
-import cardItem from "./carditems.js";
 import MultiActionAreaCard from "./components/card.jsx";
 import Grid from "@mui/material/Grid"; // Grid version 1
-import EcomTabs from "./components/tabs.jsx";
-import tabLabel from "./tablabels.js";
-import FilterTabs from "./components/filterTabs.jsx";
 import Stack from "@mui/material/Stack";
 import BasicSelect from "./components/sort.jsx";
 import CardViewTabs from "./components/cardViewTabs.jsx";
-import featureItem from "./featuresitems.js";
-import Feature from "./components/features.jsx";
 import ChipsArray from "./components/related.jsx";
-import ControlledAccordionsYear from "./components/filtersLeftSide/yearsAccordion.jsx"
-import ControlledAccordionsSort from "./components/filtersLeftSide/sortAccordion";
-import CategoryList from "./components/categoriesFilter";
-import DepartmentButton from "./components/departmentButton";
-import {useState} from "react";
-// import {ThemeProvider} from "@mui/material/styles"
-// import theme from "./createTheme"
+import theme from "./createTheme";
+import Typography from "@mui/material/Typography";
+import RangeSlider from "./components/slider";
+import CustomerReviews from "./components/customerReviews";
+import data from "./data";
+import priceAfterDiscount from "./components/priceAfterDiscount";
 
 
+function App() {
+
+    const dataWithDiscount = data.map((d) => {
+        return {
+            ...d,
+            priceAfterDiscount: priceAfterDiscount(d)
+        };
+    });
 
 
+    const [query, setQuery] = useState("");
+    const [sortBy, setSortBy] = useState(null);
+    const [btn, setBtn] = useState("");
+
+    const handleSort = (order) => {
+        setSortBy(order); // Set the sorting order
+    };
 
 
-function CreateCard(cardItem) {
+    const filterData = (query, data, sortBy, btn) => {
+        let filteredData = [...dataWithDiscount];
+
+        if (sortBy === "asc") {
+            filteredData = filteredData.sort((a, b) => a.priceAfterDiscount - b.priceAfterDiscount);
+        } else if (sortBy === "desc") {
+            filteredData = filteredData.sort((a, b) => b.priceAfterDiscount - a.priceAfterDiscount);
+        } else if (sortBy === "rate") {
+            filteredData = filteredData.sort((a, b) => b.review - a.review);
+        }
+
+        if (!query && !btn) {
+            return filteredData;
+        } else if (query && !btn) {
+            return filteredData.filter(
+                (d) =>
+                    d.name.toLowerCase().includes(query.toLowerCase()) ||
+                    d.description.toLowerCase().includes(query.toLowerCase()) ||
+                    d.priceAfterDiscount.toString().includes(query)
+            );
+        } else if (!query && btn) {
+            return filteredData.filter(
+                (d) =>
+                    d.review.toFixed(1) >= btn);
+        } else {
+            return filteredData.filter(
+                (d) =>
+                    d.name.toLowerCase().includes(query.toLowerCase()) ||
+                    d.description.toLowerCase().includes(query.toLowerCase()) ||
+                    d.priceAfterDiscount.toString().includes(query) &&
+                    d.review.toFixed(1) >= btn
+            );
+        }
+    }
+
+    // if (btn) {
+    //   filteredData=filteredData.filter(
+    //         (d) =>
+    //             d.review.toFixed(1) >= btn
+    //     );
+    //
+    //   return filteredData;
+    // }
+
+    const filteredData = filterData(query, dataWithDiscount, sortBy, btn);
+
     return (
+        <div>
+            <Box sx={{display: "flex", justifyContent: "center", height: "88px", alignItems: "center", mb: 6.5}}>
+                <ResponsiveAppBar query={query} setQuery={setQuery} sx={{mx: 'auto'}}/>
+            </Box>
+            <Grid container spacing={3} justifyContent="center" flexWrap="nowrap">
+                <Grid item direction="column" xs="auto"
+                      sx={{
+                          py: 3,
+                          mt: 19.5,
+                      }}
+                >
+                    <Box sx={{mb: 5}}>
+                        <Typography variant="descriptionBoldRob">Price Range Selected</Typography>
+                        <RangeSlider/>
+                    </Box>
+                    <CustomerReviews setBtn={setBtn}/>
+                </Grid>
+                <Grid item>
+                    <Box
+                        sx={{
+                            boxShadow:
+                                "0px 2px 4px 0px rgba(90, 91, 106, 0.24), 0px 1px 2px 0px rgba(58, 58, 68, 0.24)",
+                            backgroundColor: "rgba(255, 255, 255, 1)",
+                            borderRadius: "4px",
+                            p: 2,
+                            ml: "auto",
+                            maxWidth: "1114px"
+                        }}
+                    >
+                        <Stack sx={{height: "36px"}} direction="row" justifyContent={"space-between"}>
+                            <BasicSelect handleSort={handleSort}/>
+                            <CardViewTabs/>
 
-        <MultiActionAreaCard
-            key={cardItem.id}
-            img={cardItem.img}
-            alt={cardItem.name}
-            description={cardItem.description}
-            price={cardItem.price}
-            additional={cardItem.additional}
-            discount={cardItem.discount}
-            discountStyle={cardItem.discountStyle}
-            rate={cardItem.rate}
-        />
+                        </Stack>
+                        <ChipsArray/>
+                        <Grid container sx={{px: "auto"}} columnSpacing={2} rowSpacing={2}>
+                            {filteredData.map((d) => (
+                                <MultiActionAreaCard
+                                    id={d.id}
+                                    img={d.image}
+                                    name={d.name}
+                                    description={d.description}
+                                    price={d.price}
+                                    rate={d.review}
+                                    discount={d.discount}
+                                    currency={d.currency}
+                                    shipping={d.shipping}
+                                    cost={d.shipping.cost}
+                                    method={d.shipping.method}
+                                    estimatedDelivery={d.shipping.estimatedDelivery}/>
+                            ))}
+                        </Grid>
+                    </Box>
+                </Grid>
+            </Grid>
+
+
+        </div>
 
     );
 }
-
-function CreateFeatures(featureItem) {
-  return (
-    <Feature
-      key={featureItem.id}
-      icon={featureItem.icon}
-      name={featureItem.name}
-      additional={featureItem.additional}
-
-    />
-  );
-}
-
-function App() {
-  return (
-
-    <div>
-      <ResponsiveAppBar />
-      <Box sx={{ maxWidth: "1492px", m: "0 auto" }}>
-             <EcomTabs  />
-        <Grid container>
-          <Box
-            sx={{
-display: "flex",
-                flexDirection: "column",
-                justifyContent: "flex-start",
-              maxWidth: "355px",
-
-
-              py: 3,
-            }}
-          >
-              <DepartmentButton />
-              <CategoryList />
-              <ControlledAccordionsSort expandedLabel="Expanded filters" collapsedLabel="Collapsed filters"  />
-              <ControlledAccordionsYear expandedLabel="Years of manufactoring" collapsedLabel="Years of manufactoring"  />
-
-
-          </Box>
-          <Box
-            sx={{
-              maxWidth: "1114px",
-              ml: "auto",
-              pt: 3,
-              pb: 12,
-            }}
-          >
-            <Box
-              sx={{
-                boxShadow:
-                  "0px 2px 4px 0px rgba(90, 91, 106, 0.24), 0px 1px 2px 0px rgba(58, 58, 68, 0.24)",
-                backgroundColor: "rgba(255, 255, 255, 1)",
-                borderRadius: "4px",
-                p: "16px",
-                mb: 5,
-              }}
-            >
-              <Stack sx={{height: "36px"}} direction="row" justifyContent={"space-between"}>
-                <BasicSelect />
-                <Box  sx={{ display: "flex", flexWrap:"nowrap" , height: "36px"}}>
-                  <FilterTabs />
-                  <CardViewTabs />
-                </Box>
-              </Stack>
-              <ChipsArray />
-              <Grid container direction="row" alignItems="baseline" rowSpacing={2} >
-                {cardItem.map(CreateCard)}
-              </Grid>
-            </Box>
-            <Stack direction="row" spacing={2}>
-              {featureItem.map(CreateFeatures)}
-            </Stack>
-          </Box>
-        </Grid>
-      </Box>
-    </div>
-
-  );
-}
-
 export default App;
+

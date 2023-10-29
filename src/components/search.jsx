@@ -1,8 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import { styled } from "@mui/material/styles";
 import { InputAdornment, Input, Paper } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import theme from "../createTheme";
+
 
 const SearchContainer = styled(Paper)(({ theme }) => ({
   display: "flex",
@@ -15,16 +16,20 @@ const SearchContainer = styled(Paper)(({ theme }) => ({
   paddingRight: theme.spacing(1),
   margin: "14px",
 }));
+const SearchBar = ({query, setQuery}) => {
 
-const SearchBar = () => {
-  return (
-    <SearchContainer elevation={0}>
-      <InputAdornment position="start">
-        <SearchIcon sx={{ width: 32, height: 32, color: (theme) => theme.palette.grey[50] }} />
-      </InputAdornment>
-      <Input disableUnderline fullWidth placeholder="Search" sx={{color: (theme) => theme.palette.grey[100], ...theme.typography.searchInput}}/>
-    </SearchContainer>
+
+    return (
+        <SearchContainer elevation={0} sx={{maxWidth: "668px", height: "48px", mx: "55px"}}>
+            <InputAdornment position="start">
+                <SearchIcon sx={{width: 17.5, height: 17.5, color: (theme) => theme.palette.grey[50]}}/>
+            </InputAdornment>
+            <Input value={query} onChange={(e) => setQuery(e.target.value)} disableUnderline fullWidth
+                   placeholder="search"
+                   sx={{color: (theme) => theme.palette.grey[100], ...theme.typography.searchInput}}/>
+        </SearchContainer>
   );
 };
+
 
 export default SearchBar;

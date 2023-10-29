@@ -7,6 +7,7 @@ import {ThemeProvider} from "@mui/material/styles";
 import themeTabs from "../createThemeFilterTabs";
 import {useState} from "react";
 
+
 export default function CardViewTabs() {
       const [view, setView] = useState("grid");
 
