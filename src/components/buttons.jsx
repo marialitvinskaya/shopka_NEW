@@ -1,9 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import theme from "../createTheme";
-
+import Cart from "./cart";
 
 const pages = ["Sell on Shopka", "Register"];
 
@@ -62,30 +62,4 @@ function ButtonElectronics() {
 
 export { ButtonElectronics };
 
-    function AccountButtons() {
-        return (
 
-
-            <Button
-                    color="primary"
-                    sx={{
-                        minWidth: 104,
-                        height: 40,
-                        textTransform: "none",
-                        fontWeight: 700,
-                        fontSize: "20px",
-                        mx: 3.25,
-                        py: 1,
-                        px: 1.5,
-                        border: "1px solid",
-                        borderColor: theme.palette.primary.light,
-                    }}
-                >
-                Watch
-                </Button>
-
-        );
-
-}
-
-export { AccountButtons };

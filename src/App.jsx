@@ -13,9 +13,18 @@ import RangeSlider from "./components/slider";
 import CustomerReviews from "./components/customerReviews";
 import data from "./data";
 import priceAfterDiscount from "./components/priceAfterDiscount";
-
-
+import Cart from "./components/cart.jsx"
 function App() {
+
+    const [cartItems, setCartItems] = useState([]);
+    const addToCart = (itemToAdd) => {
+        setCartItems([...cartItems, itemToAdd]);
+        console.log("cart items:, ", cartItems)
+    }
+
+    const removeFromCart = (id) => {
+        setCartItems(cartItems.filter(item => item.id !== id));
+    };
 
     const dataWithDiscount = data.map((d) => {
         return {
@@ -36,14 +45,9 @@ function App() {
 
     const handlePriceRange = (newValue) =>
     setPriceRange(newValue);
-console.log(priceRange);
+
 
     const filterData = (query, data, sortBy, btn, priceRange) => {
-        console.log('query: ', query);
-        console.log('sort by: ', sortBy);
-        console.log('btn: ', btn);
-        console.log('price range: ', priceRange);
-
 
         let filteredData = [...dataWithDiscount];
 
@@ -81,10 +85,12 @@ console.log(priceRange);
 
     const filteredData = filterData(query, dataWithDiscount, sortBy, btn, priceRange);
 
+
     return (
         <div>
             <Box sx={{display: "flex", justifyContent: "center", height: "88px", alignItems: "center", mb: 6.5}}>
-                <ResponsiveAppBar query={query} setQuery={setQuery} sx={{mx: 'auto'}}/>
+                <ResponsiveAppBar query={query} setQuery={setQuery} sx={{mx: 'auto'}} cartItems={cartItems}
+                                  removeFromCart={removeFromCart}/>
             </Box>
             <Grid container spacing={3} justifyContent="center" flexWrap="nowrap">
                 <Grid item direction="column" xs="auto"
@@ -131,7 +137,8 @@ console.log(priceRange);
                                     shipping={d.shipping}
                                     cost={d.shipping.cost}
                                     method={d.shipping.method}
-                                    estimatedDelivery={d.shipping.estimatedDelivery}/>
+                                    estimatedDelivery={d.shipping.estimatedDelivery}
+                                    addToCart={addToCart}/>
                             ))}
                         </Grid>
                     </Box>

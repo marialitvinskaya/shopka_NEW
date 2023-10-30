@@ -1,18 +1,15 @@
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
 import LogoHeader from "./logo.jsx";
 import "../App.css";
-import AppBarButtons from "./buttons.jsx";
-import { ButtonElectronics } from "./buttons.jsx";
-import { AccountButtons } from "./buttons.jsx";
+import AccountButtons from "./watchbutton";
 import SearchBar from "./search.jsx";
 import Stack from "@mui/material/Stack";
 
-function ResponsiveAppBar({query, setQuery}) {
+function ResponsiveAppBar({query, setQuery, cartItems, removeFromCart}) {
   return (
     <AppBar
       position="static"
@@ -34,7 +31,7 @@ function ResponsiveAppBar({query, setQuery}) {
             <LogoHeader/>
             <SearchBar setQuery={setQuery} sx={{mx: "55px"}}/>
             <Stack direction="row" sx={{ml: "auto"}}>
-          <AccountButtons />
+                <AccountButtons cartItems={cartItems} removeFromCart={removeFromCart}/>
                 <Avatar alt="User Pic" src="/assets/Edward Powlowski.svg"/>
             </Stack>
         </Toolbar>

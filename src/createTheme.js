@@ -25,6 +25,12 @@ caption: {
         fontWeight: 700,
         lineHeight: 1.5,
     },
+    priceCart: {
+        fontFamily: "Inter",
+        fontSize: "1rem",
+        fontWeight: 700,
+        lineHeight: 1.5,
+    },
 description: {
     fontFamily: "Inter",
     fontSize: "1rem",

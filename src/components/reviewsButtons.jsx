@@ -29,23 +29,22 @@ const Rating = ({rating}) => {
 
 export default function ReviewButton({setBtn}) {
 
-    function handleChange(e) {
-        setBtn(e.target.value);
-        console.log(e.target.value);
+    function handleChange(value) {
+        setBtn(value);
     }
 
     return (
         <div>
-            <StyledButton onClick={handleChange} value={4}>
+            <StyledButton onClick={() => handleChange(4)}>
                 <Rating rating={4}/>
             </StyledButton>
-            <StyledButton onClick={handleChange} value={3}>
+            <StyledButton onClick={() => handleChange(3)}>
                 <Rating rating={3}/>
             </StyledButton>
-            <StyledButton onClick={handleChange} value={2}>
+            <StyledButton onClick={() => handleChange(2)}>
                 <Rating rating={2}/>
             </StyledButton>
-            <StyledButton onClick={handleChange} value={1}>
+            <StyledButton onClick={() => handleChange(1)}>
                 <Rating rating={1}/>
             </StyledButton>
         </div>

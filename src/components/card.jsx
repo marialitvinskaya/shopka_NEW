@@ -14,12 +14,10 @@ import theme from "../createTheme";
 import priceAfterDiscount from "./priceAfterDiscount";
 export default function MultiActionAreaCard(props) {
 
-    //  function priceAfterDiscount() {
-    //     return (
-    //         (props.price - ((props.price * props.discount) / 100)).toFixed(2)
-    //     )
-    // }
 
+    const handleAddToCart = () => {
+        props.addToCart(props);
+    };
     return (
         <Grid item xs={12} sm={6} md={3} lg={3} key={props.id} sx={{p: 0, width: "25%"}}>
     <Card
@@ -90,6 +88,7 @@ export default function MultiActionAreaCard(props) {
           variant="outlined"
           color="primary"
           startIcon={<FavoriteBorderOutlinedIcon sx={{color: "primary.blue60"}}/>}
+            onClick={handleAddToCart}
         >
           Watch
         </Button>
