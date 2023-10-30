@@ -29,11 +29,11 @@ function valuetext(value) {
     return `$ ${value}`;
 }
 
-export default function RangeSlider() {
-    const [value, setValue] = React.useState([10, 300]);
+export default function RangeSlider({priceRange, onChange}) {
+    // const [value, setValue] = React.useState([10, 300]);
 
     const handleChange = (event, newValue) => {
-        setValue(newValue);
+        onChange(newValue);
     };
 
     return (
@@ -59,7 +59,7 @@ export default function RangeSlider() {
             <StyledSlider
                 orientation="horizontal"
                 getAriaLabel={() => 'PriceRange'}
-                value={value}
+                value={priceRange}
                 onChange={handleChange}
                 getAriaValueText={valuetext}
                 min={10}

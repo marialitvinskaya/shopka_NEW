@@ -34,12 +34,19 @@ function App() {
         setSortBy(order); // Set the sorting order
     };
 
-const handlePriceRange = (event, newValue) =>
+    const handlePriceRange = (newValue) =>
     setPriceRange(newValue);
 console.log(priceRange);
 
     const filterData = (query, data, sortBy, btn, priceRange) => {
+        console.log('query: ', query);
+        console.log('sort by: ', sortBy);
+        console.log('btn: ', btn);
+        console.log('price range: ', priceRange);
+
+
         let filteredData = [...dataWithDiscount];
+
 
         if (sortBy === "asc") {
             filteredData = filteredData.sort((a, b) => a.priceAfterDiscount - b.priceAfterDiscount);
@@ -49,44 +56,28 @@ console.log(priceRange);
             filteredData = filteredData.sort((a, b) => b.review - a.review);
         }
 
-        if (!query && !btn) {
-            return filteredData;
-        } else if (query && !btn) {
-            return filteredData.filter(
+        if (query) {
+            filteredData = filteredData.filter(
                 (d) =>
                     d.name.toLowerCase().includes(query.toLowerCase()) ||
                     d.description.toLowerCase().includes(query.toLowerCase()) ||
-                    d.priceAfterDiscount.toString().includes(query) &&
-                    d.priceAfterDiscount >= priceRange[0] &&
-                    d.priceAfterDiscount <= priceRange[1]
-            );
-        } else if (!query && btn) {
-            return filteredData.filter(
+                    d.priceAfterDiscount.toString().includes(query)
+            )
+        }
+        if (btn) {
+            filteredData = filteredData.filter(
                 (d) =>
-                    d.review.toFixed(1) >= btn &&
-            d.priceAfterDiscount >= priceRange[0] &&
-            d.priceAfterDiscount <= priceRange[1]
-        );
-        } else {
-            return filteredData.filter(
-                (d) =>
-                    d.name.toLowerCase().includes(query.toLowerCase()) ||
-                    d.description.toLowerCase().includes(query.toLowerCase()) ||
-                    d.priceAfterDiscount.toString().includes(query) &&
-                    d.review.toFixed(1) >= btn &&
-                    d.priceAfterDiscount >= priceRange[0] &&
-                    d.priceAfterDiscount <= priceRange[1]
+                    d.review.toFixed(1) >= btn
             );
-    }}
+        }
 
-    // if (btn) {
-    //   filteredData=filteredData.filter(
-    //         (d) =>
-    //             d.review.toFixed(1) >= btn
-    //     );
-    //
-    //   return filteredData;
-    // }
+        filteredData = filteredData.filter((d) =>
+            d.priceAfterDiscount >= priceRange[0] && d.priceAfterDiscount <= priceRange[1]
+        );
+
+        return filteredData;
+    }
+
 
     const filteredData = filterData(query, dataWithDiscount, sortBy, btn, priceRange);
 
