@@ -2,8 +2,9 @@ import React, {useState} from "react";
 import Button from "@mui/material/Button";
 import theme from "../createTheme";
 import Cart from "./cart";
+import Badge from '@mui/material/Badge';
 
-export default function AccountButtons({cartItems, removeFromCart}) {
+export default function AccountButtons({cartItems, removeFromCart, count}) {
 
     const [isCartOpen, setIsCartOpen] = useState(false);
 
@@ -19,6 +20,7 @@ export default function AccountButtons({cartItems, removeFromCart}) {
     return (
 
         <div>
+            <Badge color="red" badgeContent={count} showZero anchorOrigin={{vertical: "top", horizontal: "right"}}>
             <Button
                 color="primary"
                 sx={{
@@ -27,7 +29,6 @@ export default function AccountButtons({cartItems, removeFromCart}) {
                     textTransform: "none",
                     fontWeight: 700,
                     fontSize: "20px",
-                    mx: 3.25,
                     py: 1,
                     px: 1.5,
                     border: "1px solid",
@@ -37,8 +38,10 @@ export default function AccountButtons({cartItems, removeFromCart}) {
             >
                 Watch
             </Button>
+            </Badge>
             {isCartOpen && <Cart cartItems={cartItems} removeFromCart={removeFromCart} closeCart={closeCart}/>}
         </div>
+
     );
 
 }

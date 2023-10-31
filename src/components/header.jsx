@@ -9,7 +9,7 @@ import AccountButtons from "./watchbutton";
 import SearchBar from "./search.jsx";
 import Stack from "@mui/material/Stack";
 
-function ResponsiveAppBar({query, setQuery, cartItems, removeFromCart}) {
+function ResponsiveAppBar({query, setQuery, cartItems, removeFromCart, count}) {
   return (
     <AppBar
       position="static"
@@ -31,8 +31,8 @@ function ResponsiveAppBar({query, setQuery, cartItems, removeFromCart}) {
             <LogoHeader/>
             <SearchBar setQuery={setQuery} sx={{mx: "55px"}}/>
             <Stack direction="row" sx={{ml: "auto"}}>
-                <AccountButtons cartItems={cartItems} removeFromCart={removeFromCart}/>
-                <Avatar alt="User Pic" src="/assets/Edward Powlowski.svg"/>
+                <AccountButtons cartItems={cartItems} removeFromCart={removeFromCart} count={count}/>
+                <Avatar alt="User Pic" src="/assets/Edward Powlowski.svg" sx={{ml: 3.25}}/>
             </Stack>
         </Toolbar>
       </Container>

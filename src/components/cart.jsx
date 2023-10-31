@@ -13,6 +13,17 @@ export default function Cart({cartItems, removeFromCart, closeCart}) {
         removeFromCart(id);
     };
 
+    const [amount, setAmount] = useState(1);
+
+
+    const handleAmount = (e) => {
+        if (e === "minus" && amount !== 0) {
+            setAmount(prevAmount => prevAmount - 1)
+        } else if (e === "plus") {
+            setAmount(prevAmount => prevAmount + 1)
+        }
+    }
+
 
     return (
         <Box sx={{
@@ -38,7 +49,6 @@ export default function Cart({cartItems, removeFromCart, closeCart}) {
                     flex: "display",
                     flexDirection: "column",
                     gap: 1,
-                    alignItems: "space-evenly",
                     border: "solid 1px #fff",
                     boxShadow: "5px 0 10px rgba(0, 0, 0, 0.1)",
                     borderRadius: "6px",
@@ -51,6 +61,13 @@ export default function Cart({cartItems, removeFromCart, closeCart}) {
                         <Typography sx={{color: theme.palette.grey[100]}}> {item.name} </Typography>
                         <Typography variant="priceCart" color="common.black" sx={{my: 1}}
                                     sx={{color: theme.palette.grey[100]}}> {(item.price - ((item.price * item.discount) / 100)).toFixed(2)} {item.currency.toLowerCase()}</Typography>
+                    </Stack>
+                    <Stack direction="row" spacing={2} sx={{justifyContent: "center"}}>
+                        <Button onClick={(e) => handleAmount("minus")} variant="outlined"
+                                sx={{width: "30px", height: "20px"}}>-</Button>
+                        <Typography color="common.black">{amount}</Typography>
+                        <Button onClick={(e) => handleAmount("plus")} variant="outlined"
+                                sx={{width: "30px", height: "20px"}}>+</Button>
                     </Stack>
                     <Button
                         variant="outlined"

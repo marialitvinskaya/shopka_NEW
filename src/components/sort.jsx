@@ -20,27 +20,7 @@ export default function BasicSelect({handleSort}) {
     handleSort(value); // Call handleSort function from the parent component
   }
 
-  // function handleChange(event) {
-  //   const { value, id } = event.target;
-  //   if (id === "sortBySelect") {
-  //     setSortBy(value);
-  //   } else if (id === "conditionSelect") {
-  //     setCondition(value);
-  //   } else if (id === "deliverySelect") {
-  //     setDelivery(value);
-  //   }
-  // }
-  //
-  // const handleSort = (order) => {
-  //   const sortedData = [...data].sort((a,b) => {
-  //     if (order === 'asc') {
-  //       return a.price - b.price;
-  //     } else if (order === 'desc') {
-  //       return b.price - a.price;
-  //     }
-  //   });
-  // }
-  // export sortedData;
+
   return (
       <Stack direction="row" spacing={2}>
         <FormControl>

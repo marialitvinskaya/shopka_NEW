@@ -19,6 +19,13 @@ caption: {
         fontWeight: 500,
         lineHeight: 1.43,
     },
+    badge: {
+        fontFamily: "Quicksand",
+        fontSize: "0.875rem",
+        fontWeight: 700,
+        lineHeight: 1.43,
+    },
+
     price: {
     fontFamily: "Inter",
         fontSize: "1.5rem",
@@ -95,6 +102,9 @@ description: {
             70: "#37833B",
 5: "#ECF7ED",
         },
+        red: {
+            main: "#F44336",
+        }
     },
 
     components: {

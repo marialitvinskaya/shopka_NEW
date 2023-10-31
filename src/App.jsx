@@ -13,18 +13,26 @@ import RangeSlider from "./components/slider";
 import CustomerReviews from "./components/customerReviews";
 import data from "./data";
 import priceAfterDiscount from "./components/priceAfterDiscount";
-import Cart from "./components/cart.jsx"
+
 function App() {
 
     const [cartItems, setCartItems] = useState([]);
-    const addToCart = (itemToAdd) => {
-        setCartItems([...cartItems, itemToAdd]);
-        console.log("cart items:, ", cartItems)
+    const [count, setCount] = useState(0);
+
+    const addToCart = (itemToAdd, count) => {
+        const updatedItem = {...itemToAdd, amount: 1};
+        if (!cartItems.some((item) => item.id === itemToAdd.id)) {
+            setCartItems([...cartItems, itemToAdd]);
+            setCount(prevCount => prevCount + 1);
+        }
     }
 
     const removeFromCart = (id) => {
         setCartItems(cartItems.filter(item => item.id !== id));
+        setCount(prevCount => prevCount - 1);
+
     };
+
 
     const dataWithDiscount = data.map((d) => {
         return {
@@ -90,7 +98,7 @@ function App() {
         <div>
             <Box sx={{display: "flex", justifyContent: "center", height: "88px", alignItems: "center", mb: 6.5}}>
                 <ResponsiveAppBar query={query} setQuery={setQuery} sx={{mx: 'auto'}} cartItems={cartItems}
-                                  removeFromCart={removeFromCart}/>
+                                  removeFromCart={removeFromCart} count={count}/>
             </Box>
             <Grid container spacing={3} justifyContent="center" flexWrap="nowrap">
                 <Grid item direction="column" xs="auto"

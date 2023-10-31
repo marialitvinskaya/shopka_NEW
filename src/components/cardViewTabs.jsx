@@ -11,13 +11,13 @@ import {useState} from "react";
 export default function CardViewTabs() {
       const [view, setView] = useState("grid");
 
-  function handleChange(event, newValue) {
+  function handleView(event, newValue) {
     setView(newValue);
   }
 
   return (
       <ThemeProvider theme={themeTabs}>
-    <Tabs  value={view} onChange={handleChange} indicatorColor="none" sx={{marginLeft: 3}}>
+        <Tabs value={view} onChange={handleView} indicatorColor="none" sx={{marginLeft: 3}}>
       <Tab
           sx={{ width: "68px",  m: 0 }}
         icon=<ViewListSharpIcon sx={{width: "18px"}}/>
