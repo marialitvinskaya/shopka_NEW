@@ -13,12 +13,10 @@ import TextRating from "./review";
 import theme from "../createTheme";
 import priceAfterDiscount from "./priceAfterDiscount";
 import StockButton from "./stockButton";
+
+
 export default function MultiActionAreaCard(props) {
 
-
-    const handleAddToCart = () => {
-        props.addToCart(props);
-    };
     return (
         <Grid item xs={12} sm={6} md={3} lg={3} key={props.id} sx={{p: 0, width: "25%"}}>
     <Card
@@ -88,11 +86,12 @@ export default function MultiActionAreaCard(props) {
           variant="outlined"
           color="primary"
           startIcon={<FavoriteBorderOutlinedIcon sx={{color: "primary.blue60"}}/>}
-            onClick={handleAddToCart}
+            onClick={() => {
+                props.addToCart(props);
+            }}
         >
           Watch
         </Button>
-
             </CardActions>
         </Box>
     </Card>

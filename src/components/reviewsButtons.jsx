@@ -1,10 +1,9 @@
-import React, {useState} from "react";
+import React from "react";
 import Button from "@mui/material/Button";
-import theme from "../createTheme";
 import Typography from "@mui/material/Typography";
 import StarIcon from '@mui/icons-material/Star';
 import {styled} from "@mui/material/styles";
-import Box from "@mui/material/Box";
+
 
 
 const StyledButton = styled(Button)(({theme}) => ({
@@ -29,9 +28,9 @@ const Rating = ({rating}) => {
 
 export default function ReviewButton({setBtn}) {
 
-    function handleChange(value) {
+    const handleChange = ((value) => {
         setBtn(value);
-    }
+    })
 
     return (
         <div>

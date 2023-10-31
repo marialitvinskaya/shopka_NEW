@@ -84,9 +84,7 @@ export default function Cart({cartItems, removeFromCart, closeCart}) {
                         >
                             Remove
                         </Button>
-
                     </Stack>
-
                 </Box>
             ))}
         </Box>

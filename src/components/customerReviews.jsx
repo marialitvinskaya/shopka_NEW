@@ -7,8 +7,6 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ReviewButton from "./reviewsButtons";
 import Box from "@mui/material/Box";
 import {styled} from "@mui/material/styles";
-import Button from "@mui/material/Button";
-import theme from "../createTheme";
 
 const StyledAccordion = styled(Accordion)(({theme}) => ({
     '& .MuiButtonBase-root, &.MuiAccordionSummary-root': {
@@ -19,21 +17,17 @@ const StyledAccordion = styled(Accordion)(({theme}) => ({
 export default function CustomerReviews({setBtn}) {
     const [expanded, setExpanded] = useState(false);
 
-
     const handleChange = (panel) => (event, isExpanded) => {
         setExpanded(isExpanded ? panel : false);
     };
 
-
     return (
         <Box sx={{width: "245px"}}>
             <StyledAccordion expanded={expanded === 'panel'} onChange={handleChange('panel')} sx={{boxShadow: "none"}}>
-
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon/>}
                     aria-controls="panel-content"
                     id="1"
-
                 >
                     <Typography variat="descriptionBoldRob" sx={{fontWeight: 900, my: "auto"}} textTransform="uppercase"
                                 onChange={handleChange('panel')}>Customer Reviews</Typography>
@@ -41,8 +35,6 @@ export default function CustomerReviews({setBtn}) {
                 <AccordionDetails sx={{p: 0.5}}>
                     <ReviewButton setBtn={setBtn}/>
                 </AccordionDetails>
-
-
             </StyledAccordion>
         </Box>
     );

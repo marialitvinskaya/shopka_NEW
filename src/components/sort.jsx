@@ -14,11 +14,11 @@ export default function BasicSelect({handleSort}) {
   const [delivery, setDelivery] = useState("");
 
 
-  function handleChange(event) {
+  const handleChange = ((event) => {
     const {value} = event.target;
     setSortBy(value);
-    handleSort(value); // Call handleSort function from the parent component
-  }
+    handleSort(value);
+  })
 
 
   return (

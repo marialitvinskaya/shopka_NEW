@@ -2,8 +2,6 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Slider, {SliderThumb} from '@mui/material/Slider';
 import {styled} from '@mui/material/styles';
-import Typography from "@mui/material/Typography";
-import Stack from "@mui/material/Stack";
 import theme from "../createTheme";
 
 
@@ -24,17 +22,11 @@ const StyledSlider = styled(Slider)(({theme}) => ({
         },
     }
 }));
+const valueText = (value) =>
+    `$ ${value}`;
 
-function valuetext(value) {
-    return `$ ${value}`;
-}
 
 export default function RangeSlider({priceRange, onChange}) {
-    // const [value, setValue] = React.useState([10, 300]);
-
-    const handleChange = (event, newValue) => {
-        onChange(newValue);
-    };
 
     return (
         <Box sx={{
@@ -60,31 +52,30 @@ export default function RangeSlider({priceRange, onChange}) {
                 orientation="horizontal"
                 getAriaLabel={() => 'PriceRange'}
                 value={priceRange}
-                onChange={handleChange}
-                getAriaValueText={valuetext}
+                onChange={(event, newValue) => {
+                    onChange(newValue);
+                }}
+                getAriaValueText={valueText}
                 min={10}
                 max={300}
                 valueLabelDisplay="on"
-                valueLabelFormat={(value) => `$${value}`}
+                valueLabelFormat={valueText}
                 sx={{
                     position: "absolute",
                     bottom: "12.5%",
                     width: "200px",
                     '& .MuiSlider-rail': {
-                        height: '3px', // Adjust the thickness of the slider track
+                        height: '3px'
                     },
                     '& .MuiSlider-track': {
-                        height: '3px', // Adjust the thickness of the slider track
+                        height: '3px'
                     },
                     '& .MuiSlider-thumb': {
-                        width: '16px', // Adjust the width of the slider thumb
-                        height: '16px', // Adjust the height of the slider thumb
+                        width: '16px',
+                        height: '16px'
                     }
                 }}
-
             />
-
-
         </Box>
     );
 }

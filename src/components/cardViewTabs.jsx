@@ -11,9 +11,9 @@ import {useState} from "react";
 export default function CardViewTabs() {
       const [view, setView] = useState("grid");
 
-  function handleView(event, newValue) {
-    setView(newValue);
-  }
+    const handleView = ((event, newValue) =>
+        setView(newValue));
+
 
   return (
       <ThemeProvider theme={themeTabs}>

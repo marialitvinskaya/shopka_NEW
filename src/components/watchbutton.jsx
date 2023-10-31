@@ -12,7 +12,6 @@ export default function AccountButtons({cartItems, removeFromCart, count}) {
         setIsCartOpen(true);
     };
 
-
     const closeCart = () => {
         setIsCartOpen(false);
     };

@@ -9,7 +9,7 @@ import AccountButtons from "./watchbutton";
 import SearchBar from "./search.jsx";
 import Stack from "@mui/material/Stack";
 
-function ResponsiveAppBar({query, setQuery, cartItems, removeFromCart, count}) {
+function ResponsiveAppBar({setQuery, cartItems, removeFromCart, count}) {
   return (
     <AppBar
       position="static"

@@ -16,11 +16,12 @@ import priceAfterDiscount from "./components/priceAfterDiscount";
 
 function App() {
 
+    // adding cards to the cart and remove
+
     const [cartItems, setCartItems] = useState([]);
     const [count, setCount] = useState(0);
 
-    const addToCart = (itemToAdd, count) => {
-        const updatedItem = {...itemToAdd, amount: 1};
+    const addToCart = (itemToAdd) => {
         if (!cartItems.some((item) => item.id === itemToAdd.id)) {
             setCartItems([...cartItems, itemToAdd]);
             setCount(prevCount => prevCount + 1);
@@ -30,10 +31,9 @@ function App() {
     const removeFromCart = (id) => {
         setCartItems(cartItems.filter(item => item.id !== id));
         setCount(prevCount => prevCount - 1);
-
     };
 
-
+// creating new data array with the price after discount
     const dataWithDiscount = data.map((d) => {
         return {
             ...d,
@@ -41,6 +41,7 @@ function App() {
         };
     });
 
+// creating sort and filters
 
     const [query, setQuery] = useState("");
     const [sortBy, setSortBy] = useState(null);
@@ -48,7 +49,7 @@ function App() {
     const [priceRange, setPriceRange] = React.useState([10, 300]);
 
     const handleSort = (order) => {
-        setSortBy(order); // Set the sorting order
+        setSortBy(order);
     };
 
     const handlePriceRange = (newValue) =>
@@ -128,7 +129,6 @@ function App() {
                         <Stack sx={{height: "36px"}} direction="row" justifyContent={"space-between"}>
                             <BasicSelect handleSort={handleSort}/>
                             <CardViewTabs/>
-
                         </Stack>
                         <ChipsArray/>
                         <Grid container sx={{px: "auto"}} columnSpacing={2} rowSpacing={2}>
