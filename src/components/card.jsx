@@ -12,6 +12,7 @@ import Stack from "@mui/material/Stack";
 import TextRating from "./review";
 import theme from "../createTheme";
 import priceAfterDiscount from "./priceAfterDiscount";
+import StockButton from "./stockButton";
 export default function MultiActionAreaCard(props) {
 
 
@@ -39,19 +40,18 @@ export default function MultiActionAreaCard(props) {
     >
 
       <CardActionArea >
-
+          <StockButton inStock={props.inStock}/>
         <CardMedia
           component="img"
+          image={props.img}
           sx={{
             height: "224px",
             width: "227px",
             objectFit: "cover",
-              mx: "auto", mb: 1.5
+              mx: "auto", mb: 1.5,
+              zIndex: 0
           }}
-          image={props.img}
         />
-
-
           <CardContent sx={{p: 0, mt: 1.5, mb: 1}}>
               <Stack direction="column" sx={{p: 0}}>
                   <Typography variant="description" color="grey[100]" sx={{minHeight: "100px"}}>

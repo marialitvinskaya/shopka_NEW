@@ -57,26 +57,36 @@ export default function Cart({cartItems, removeFromCart, closeCart}) {
                     p: 1,
                     mt: 1,
                 }} key={item.id}>
+
                     <Stack direction="row" sx={{justifyContent: "space-evenly"}}>
                         <Typography sx={{color: theme.palette.grey[100]}}> {item.name} </Typography>
                         <Typography variant="priceCart" color="common.black" sx={{my: 1}}
                                     sx={{color: theme.palette.grey[100]}}> {(item.price - ((item.price * item.discount) / 100)).toFixed(2)} {item.currency.toLowerCase()}</Typography>
+
                     </Stack>
-                    <Stack direction="row" spacing={2} sx={{justifyContent: "center"}}>
+                    <Stack direction="row" sx={{
+                        mx: "auto",
+                        alignItems: "center",
+                        my: 1,
+                        justifyContent: "space-between",
+                        maxWidth: "300px"
+                    }}>
                         <Button onClick={(e) => handleAmount("minus")} variant="outlined"
                                 sx={{width: "30px", height: "20px"}}>-</Button>
-                        <Typography color="common.black">{amount}</Typography>
+                        <Typography color="common.black" sx={{mx: 1}}>{amount}</Typography>
                         <Button onClick={(e) => handleAmount("plus")} variant="outlined"
                                 sx={{width: "30px", height: "20px"}}>+</Button>
+                        <Button
+                            variant="outlined"
+                            color="primary" z
+                            onClick={() => handleRemoveFromCart(item.id)}
+                            sx={{width: "80px", height: "30px", ml: "auto"}}
+                        >
+                            Remove
+                        </Button>
+
                     </Stack>
-                    <Button
-                        variant="outlined"
-                        color="primary" z
-                        onClick={() => handleRemoveFromCart(item.id)}
-                        sx={{width: "100px", height: "30px", mx: "auto", my: 1}}
-                    >
-                        Remove
-                    </Button>
+
                 </Box>
             ))}
         </Box>

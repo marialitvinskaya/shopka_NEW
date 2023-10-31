@@ -146,6 +146,7 @@ function App() {
                                     cost={d.shipping.cost}
                                     method={d.shipping.method}
                                     estimatedDelivery={d.shipping.estimatedDelivery}
+                                    inStock={d.inStock}
                                     addToCart={addToCart}/>
                             ))}
                         </Grid>
