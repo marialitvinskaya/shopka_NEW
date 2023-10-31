@@ -8,7 +8,7 @@ const data = [
         inStock: true,
         image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mba-digitalmat-gallery-2-202111?wid=728&hei=666&fmt=png-alpha&.v=1664581580690",
         review: 4.5,
-        discount: 100,
+        discount: 70,
         description: "A powerful laptop with high-resolution display and fast performance.",
         shipping: {
             cost: 29.99,
