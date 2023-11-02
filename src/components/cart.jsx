@@ -9,12 +9,10 @@ import priceAfterDiscount from "./priceAfterDiscount";
 import Stack from "@mui/material/Stack";
 
 export default function Cart({cartItems, removeFromCart, closeCart}) {
-    const handleRemoveFromCart = (id) => {
-        removeFromCart(id);
-    };
 
+
+    // calculating amount of each item in the cart
     const [amount, setAmount] = useState(1);
-
 
     const handleAmount = (e) => {
         if (e === "minus" && amount !== 0) {
@@ -79,7 +77,7 @@ export default function Cart({cartItems, removeFromCart, closeCart}) {
                         <Button
                             variant="outlined"
                             color="primary" z
-                            onClick={() => handleRemoveFromCart(item.id)}
+                            onClick={() => removeFromCart(item.id)}
                             sx={{width: "80px", height: "30px", ml: "auto"}}
                         >
                             Remove
