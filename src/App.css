@@ -1,0 +1,28 @@
+.App {
+  text-align: center;
+}
+
+.logo-image {
+  width: 176px;
+  height: 40px;
+  margin-right: 6px;
+}
+
+.app-bar {
+  background-color: #ffffff;
+}
+
+.app-bar-text {
+  color: #000000;
+}
+
+.search-appbar {
+  border-radius: 99px;
+  background-color: #ededf0;
+  margin: 0 14px;
+  max-width: 668px;
+}
+
+.container {
+  display: flex;
+}
