@@ -7,7 +7,6 @@ import Stack from "@mui/material/Stack";
 import BasicSelect from "./components/sort.jsx";
 import CardViewTabs from "./components/cardViewTabs.jsx";
 import ChipsArray from "./components/related.jsx";
-import theme from "./createTheme";
 import Typography from "@mui/material/Typography";
 import RangeSlider from "./components/slider";
 import CustomerReviews from "./components/customerReviews";
